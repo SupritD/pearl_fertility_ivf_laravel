@@ -8,38 +8,15 @@
     <!-- Scripts & Styles from Vite -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
-    <style>
-        .dev-sticky-btn {
-            position: fixed;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px 0 0 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        .dev-sticky-btn a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 5px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-            text-align: center;
-            transition: all 0.2s ease-in-out;
-            white-space: nowrap;
-        }
-        .dev-sticky-btn a:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-        }
-    </style>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 <body class="d-flex flex-column min-vh-100">
 

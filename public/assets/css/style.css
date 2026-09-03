@@ -1,0 +1,379 @@
+/* Dev Sticky Button */
+.dev-sticky-btn {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px 0 0 10px;
+}
+.dev-sticky-btn a {
+    min-width: 100px;
+}
+
+/* Mega Menu */
+.navbar .mega-menu {
+    position: static !important;
+}
+.navbar .dropdown-menu.mega-menu-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+.mega-menu-column h6 {
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+.mega-menu-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+.mega-menu-column ul li {
+    margin-bottom: 0.5rem;
+}
+.mega-menu-column ul li a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 0.85rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
+}
+.mega-menu-column ul li a::before {
+    content: '- ';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    color: #0d6efd; /* Bootstrap primary blue */
+}
+.mega-menu-column ul li a:hover {
+    color: #0d6efd;
+    transform: translateX(15px);
+}
+.mega-menu-column ul li a:hover::before {
+    opacity: 1;
+}
+/* Simple hover activation for mega menu */
+@media all and (min-width: 992px) {
+    .navbar .mega-menu:hover .mega-menu-content {
+        display: block;
+    }
+}
+
+/* Banner Swiper */
+.mySwiper.swiper {
+    width: 100%;
+    height: 70vh; /* Responsive height */
+}
+@media (max-width: 768px) {
+    .mySwiper.swiper {
+        height: 50vh;
+    }
+    .banner-caption h1 {
+        font-size: 2rem;
+    }
+    .banner-caption p {
+        font-size: 1rem;
+    }
+}
+.mySwiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.banner-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    color: white;
+    z-index: 10;
+}
+
+/* Departments Slider */
+.departments-slider {
+    width: 100%;
+    padding: 20px 0;
+}
+.department-box-1 {
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.department-box-1:hover {
+    transform: translateY(-10px);
+}
+.department-box-1 .dep-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+.department-box-1 h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+}
+.department-box-1.bg-blue {
+    background-color: #0d6efd; /* Or specific brand blue */
+}
+.department-box-1.bg-pink {
+    background-color: #e83e8c; /* Or specific brand pink */
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: #e33b8a; /* Vibrant pink from screenshot */
+    color: white;
+    overflow: hidden;
+}
+.cta-section .cta-image-col {
+    position: relative;
+    min-height: 400px;
+}
+.cta-section .cta-image {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    max-height: 120%; /* Pop out effect */
+    max-width: 100%;
+    object-fit: cover;
+}
+@media (max-width: 991px) {
+    .cta-section .cta-image-col {
+        min-height: 300px;
+    }
+    .cta-section .cta-image {
+        position: relative;
+        left: auto;
+        max-height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+}
+.cta-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.cta-list-icon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+.cta-btn {
+    background-color: #ff007f;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.cta-btn:hover {
+    background-color: #d10068;
+    color: white;
+}
+
+/* 1. About Section */
+.bg-pink-subtle {
+    background-color: #fdf5f8;
+}
+.about-quote {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #333;
+}
+.about-quote .highlight {
+    color: #e83e8c;
+    font-weight: bold;
+}
+.section-title {
+    color: #e83e8c;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.section-subtitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #000;
+    margin-bottom: 2rem;
+}
+.title-underline {
+    width: 50px;
+    height: 3px;
+    background-color: #e83e8c;
+    margin: 0 auto 2rem auto;
+}
+
+/* 2. Testimonials */
+.testimonialSwiper .swiper-slide {
+    height: auto;
+}
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 100%;
+}
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+.stars {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+.testimonial-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 3. FAQ Accordion */
+.accordion-faq .accordion-item {
+    border: none;
+    border-radius: 5px !important; /* Force border radius */
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+.accordion-faq .accordion-button {
+    font-weight: bold;
+    color: #333;
+    background-color: white;
+    padding: 1.25rem 1.5rem;
+    box-shadow: none;
+}
+.accordion-faq .accordion-button:not(.collapsed) {
+    color: #e83e8c;
+    background-color: white;
+    box-shadow: none;
+}
+.accordion-faq .accordion-button::after {
+    background-size: 1rem;
+}
+.accordion-faq .accordion-body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #666;
+    line-height: 1.6;
+}
+.faq-icon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #6c757d;
+}
+.accordion-button:not(.collapsed) .faq-icon-circle {
+    background-color: #e83e8c;
+    color: white;
+}
+
+/* 4. Useful Info Section */
+.gradient-pink-bg {
+    background: linear-gradient(135deg, #f8a5c2, #e83e8c);
+    color: white;
+}
+.info-step-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1;
+    margin-bottom: -15px;
+}
+.info-step-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+.info-step-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* 5. Gallery */
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.gallery-img:hover {
+    transform: scale(1.03);
+}
+
+/* 6. Nutrition Section */
+.nutrition-text-box {
+    background-color: #ffccff; /* light pink */
+    padding: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nutrition-text-box h3 {
+    font-weight: bold;
+    color: #000;
+}
+.nutrition-text-box p {
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+.nutrition-img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}

@@ -98,10 +98,6 @@
             delay: 3500,
             disableOnInteraction: false,
         },
-        pagination: {
-            el: '.gallerySwiper .swiper-pagination',
-            clickable: true,
-        },
         breakpoints: {
             768: {
                 slidesPerView: 3,
@@ -211,8 +207,8 @@
         <div class="row align-items-center">
             <div class="col-lg-5 cta-image-col">
                 <!-- We place the image here, positioned absolute on desktop to break out of the section -->
-                <img src="{{ asset('assets/images/family_cta.jpg') }}" alt="Happy Family" class="cta-image rounded shadow-lg d-none d-lg-block">
-                <img src="{{ asset('assets/images/family_cta.jpg') }}" alt="Happy Family" class="img-fluid rounded shadow-lg d-block d-lg-none mb-4">
+                <img src="{{ asset('assets/images/family_cta.png') }}" alt="Happy Family" class="cta-image rounded d-none d-lg-block">
+                <img src="{{ asset('assets/images/family_cta.png') }}" alt="Happy Family" class="img-fluid rounded d-block d-lg-none mb-4">
             </div>
             <div class="col-lg-7 py-5">
                 <h2 class="fw-bold mb-5">We Offer Wide Range Of Services At Pearl Fertility And IVF</h2>
@@ -436,26 +432,12 @@
         
         <div class="swiper gallerySwiper pb-5">
             <div class="swiper-wrapper">
+                @for ($i = 2; $i <= 29; $i++)
                 <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/400x300/e83e8c/ffffff?text=Gallery+1" alt="Gallery Image" class="gallery-img">
+                    <img src="{{ asset('assets/images/img-gallery/' . $i . '.png') }}" alt="Gallery Image" class="gallery-img">
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/400x300/e83e8c/ffffff?text=Gallery+2" alt="Gallery Image" class="gallery-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/400x300/e83e8c/ffffff?text=Gallery+3" alt="Gallery Image" class="gallery-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/400x300/e83e8c/ffffff?text=Gallery+4" alt="Gallery Image" class="gallery-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/400x300/e83e8c/ffffff?text=Gallery+5" alt="Gallery Image" class="gallery-img">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/400x300/e83e8c/ffffff?text=Gallery+6" alt="Gallery Image" class="gallery-img">
-                </div>
+                @endfor
             </div>
-            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
@@ -469,7 +451,7 @@
         <div class="row g-0 rounded overflow-hidden shadow-sm">
             <div class="col-lg-6">
                 <!-- Using placeholder for yoga / nutrition -->
-                <img src="https://via.placeholder.com/800x600/e83e8c/ffffff?text=Nutrition+and+Yoga" alt="Nutrition and Yoga" class="nutrition-img">
+                <img src="{{ asset('assets/images/yoga.jpg')}}" alt="Nutrition and Yoga" class="nutrition-img">
             </div>
             <div class="col-lg-6">
                 <div class="nutrition-text-box">

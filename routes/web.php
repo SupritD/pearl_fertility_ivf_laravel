@@ -47,4 +47,14 @@ Route::get('/blogs/icsi-treatment-for-infertility-a-breakthrough-hope-for-couple
 
 Auth::routes();
 
-Route::get('/admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+
+    Route::resource('categories', App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('tags', App\Http\Controllers\Admin\TagController::class);
+    Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
+    Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
+    Route::resource('leads', App\Http\Controllers\Admin\LeadController::class)->except(['create', 'store']);
+});

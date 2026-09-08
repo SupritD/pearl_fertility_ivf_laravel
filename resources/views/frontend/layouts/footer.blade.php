@@ -1,27 +1,44 @@
-<footer class="bg-dark text-white pt-5 pb-4 mt-5">
+<footer class="bg-dark text-white pt-5 pb-4">
     <div class="container text-md-left">
         <div class="row text-md-left">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <div class="mb-4 bg-white p-2 d-inline-block rounded">
-                    <img src="{{ asset('assets/images/logo/pearl-logo.png') }}" alt="Pearl Fertility and IVF" height="60">
+                    <img src="{{ asset('assets/images/logo/pearl-logo.png') }}" alt="Pearl Fertility and IVF"
+                        height="60">
                 </div>
-                <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring
+                    which I enjoy with my whole heart.</p>
                 <h5 class="text-uppercase mb-3 font-weight-bold text-primary mt-4">Reach Out</h5>
                 <p><i class="bi bi-telephone-fill me-2"></i> +91 9022920663</p>
                 <p><i class="bi bi-telephone-fill me-2"></i> +91 8779580308</p>
-                <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:pearlfertilitynivf@gmail.com" class="text-white text-decoration-none">pearlfertilitynivf@gmail.com</a></p>
+                <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:pearlfertilitynivf@gmail.com"
+                        class="text-white text-decoration-none">pearlfertilitynivf@gmail.com</a></p>
             </div>
 
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Useful Links</h5>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.best-ivf-center-in-mumbai') }}" class="text-white text-decoration-none">IVF Services</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.iui-treatment-in-mumbai') }}" class="text-white text-decoration-none">IUI Services</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.imsi-treatment-in-mumbai') }}" class="text-white text-decoration-none">IMSI Services</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.donor-embryo') }}" class="text-white text-decoration-none">Donor Embryo Service</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.pcos-treatment-in-mumbai') }}" class="text-white text-decoration-none">PCOS Treatment</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.icsi-treatment-for-infertility') }}" class="text-white text-decoration-none">ICSI Treatment</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.best-lady-gynecologist-in-mumbai') }}" class="text-white text-decoration-none">Best Lady Gynecologist</a></p>
-                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.doctor') }}" class="text-white text-decoration-none">Our Doctor</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a
+                        href="{{ route('frontend.best-ivf-center-in-mumbai') }}"
+                        class="text-white text-decoration-none">IVF Services</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a
+                        href="{{ route('frontend.iui-treatment-in-mumbai') }}"
+                        class="text-white text-decoration-none">IUI Services</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a
+                        href="{{ route('frontend.imsi-treatment-in-mumbai') }}"
+                        class="text-white text-decoration-none">IMSI Services</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.donor-embryo') }}"
+                        class="text-white text-decoration-none">Donor Embryo Service</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a
+                        href="{{ route('frontend.pcos-treatment-in-mumbai') }}"
+                        class="text-white text-decoration-none">PCOS Treatment</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a
+                        href="{{ route('frontend.icsi-treatment-for-infertility') }}"
+                        class="text-white text-decoration-none">ICSI Treatment</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a
+                        href="{{ route('frontend.best-lady-gynecologist-in-mumbai') }}"
+                        class="text-white text-decoration-none">Best Lady Gynecologist</a></p>
+                <p><i class="bi bi-chevron-right text-primary me-2"></i><a href="{{ route('frontend.doctor') }}"
+                        class="text-white text-decoration-none">Our Doctor</a></p>
             </div>
 
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -31,8 +48,10 @@
 
                 <h5 class="text-uppercase mb-3 mt-4 font-weight-bold text-primary">Address</h5>
                 <p>
-                    <a href="https://maps.app.goo.gl/ciKZ9pEKr3wnLUCk6" target="_blank" class="text-white text-decoration-none">
-                        <i class="bi bi-geo-alt-fill me-2"></i>First Floor, Kanyakumari Heights, Bandar Pakhadi Rd, off New Link Road, Kandivali, Maharashtra Nagar, Kandivali West, Mumbai, Maharashtra 400067
+                    <a href="https://maps.app.goo.gl/ciKZ9pEKr3wnLUCk6" target="_blank"
+                        class="text-white text-decoration-none">
+                        <i class="bi bi-geo-alt-fill me-2"></i>First Floor, Kanyakumari Heights, Bandar Pakhadi Rd, off
+                        New Link Road, Kandivali, Maharashtra Nagar, Kandivali West, Mumbai, Maharashtra 400067
                     </a>
                 </p>
             </div>
@@ -46,7 +65,7 @@
                         <button class="btn btn-primary" type="button">Subscribe</button>
                     </div>
                 </form>
-                
+
                 <h5 class="text-uppercase mb-3 mt-4 font-weight-bold text-primary">Social Connect</h5>
                 <div>
                     <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-facebook fs-4"></i></a>

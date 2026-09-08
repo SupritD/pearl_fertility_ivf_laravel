@@ -61,12 +61,12 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs mb-4 border-bottom-0" id="iuiTabs" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active fw-bold border-0 border-bottom border-3 text-dark rounded-0 px-4 py-3" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true" style="border-color: #e83e8c !important; background: transparent;">
+                <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">
                     How is the IUI processed?
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link fw-bold border-0 text-muted rounded-0 px-4 py-3" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false" style="background: transparent;">
+                <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">
                     How to increase chances of pregnancy after IUI?
                 </button>
             </li>
@@ -136,32 +136,7 @@
     </div>
 </section>
 
-<!-- Custom JS for tabs to toggle bottom border on active -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var triggerTabList = [].slice.call(document.querySelectorAll('#iuiTabs button'))
-    triggerTabList.forEach(function (triggerEl) {
-        var tabTrigger = new bootstrap.Tab(triggerEl)
-        triggerEl.addEventListener('click', function (event) {
-            event.preventDefault()
-            
-            // Reset all styles
-            triggerTabList.forEach(function(el) {
-                el.classList.remove('border-bottom', 'border-3', 'text-dark');
-                el.classList.add('border-0', 'text-muted');
-                el.style.borderColor = 'transparent';
-            });
-            
-            // Apply active styles
-            this.classList.remove('border-0', 'text-muted');
-            this.classList.add('border-bottom', 'border-3', 'text-dark');
-            this.style.setProperty('border-color', '#e83e8c', 'important');
-            
-            tabTrigger.show()
-        })
-    })
-});
-</script>
+
 
 <style>
 .text-pink {
@@ -175,8 +150,22 @@ document.addEventListener('DOMContentLoaded', function () {
     height: 3px;
     background-color: #e83e8c;
 }
+.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #6c757d;
+    background: transparent;
+    font-weight: bold;
+    border-radius: 0;
+    padding: 1rem 1.5rem;
+}
 .nav-tabs .nav-link:hover {
     border-color: transparent;
+}
+.nav-tabs .nav-link.active {
+    color: #212529 !important;
+    border-bottom: 3px solid #e83e8c !important;
+    background: transparent;
 }
 </style>
 @endsection

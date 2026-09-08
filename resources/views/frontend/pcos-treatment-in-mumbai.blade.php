@@ -94,14 +94,14 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-12">
-                <ul class="nav nav-tabs custom-tabs mb-4 border-bottom-0" id="pcodTabs" role="tablist">
+                <ul class="nav nav-tabs mb-4 border-bottom-0" id="pcodTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active fw-bold px-4 py-3 text-dark border-0 rounded-0" id="diagnose-tab" data-bs-toggle="tab" data-bs-target="#diagnose" type="button" role="tab" aria-controls="diagnose" aria-selected="true" style="font-size: 0.95rem;">
+                        <button class="nav-link active" id="diagnose-tab" data-bs-toggle="tab" data-bs-target="#diagnose" type="button" role="tab" aria-controls="diagnose" aria-selected="true">
                             How will you diagnose polycystic ovarian syndrome?
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link fw-bold px-4 py-3 text-dark border-0 rounded-0" id="nature-tab" data-bs-toggle="tab" data-bs-target="#nature" type="button" role="tab" aria-controls="nature" aria-selected="false" style="font-size: 0.95rem;">
+                        <button class="nav-link" id="nature-tab" data-bs-toggle="tab" data-bs-target="#nature" type="button" role="tab" aria-controls="nature" aria-selected="false">
                             Nature helps in controlling your PCOD to great extent
                         </button>
                     </li>
@@ -201,29 +201,22 @@
 .text-pink {
     color: #e83e8c !important;
 }
-/* Custom Tabs Styling */
-.custom-tabs {
-    background-color: #f8f9fa;
+.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #6c757d;
+    background: transparent;
+    font-weight: bold;
+    border-radius: 0;
+    padding: 1rem 1.5rem;
 }
-.custom-tabs .nav-link {
-    color: #495057;
-    position: relative;
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
 }
-.custom-tabs .nav-link.active {
-    background-color: #fff;
-    color: #e83e8c !important;
-}
-.custom-tabs .nav-link.active::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background-color: #e83e8c;
-}
-.tab-content {
-    border-top: 1px solid #dee2e6;
+.nav-tabs .nav-link.active {
+    color: #212529 !important;
+    border-bottom: 3px solid #e83e8c !important;
+    background: transparent;
 }
 </style>
 @endsection

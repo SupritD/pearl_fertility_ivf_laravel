@@ -45,8 +45,12 @@
                                 <span class="badge bg-primary">New</span>
                             @elseif($lead->status == 'Contacted')
                                 <span class="badge bg-warning">Contacted</span>
+                            @elseif($lead->status == 'Converted')
+                                <span class="badge bg-success">Converted</span>
+                            @elseif($lead->status == 'Lost')
+                                <span class="badge bg-danger">Lost</span>
                             @else
-                                <span class="badge bg-success">{{ $lead->status }}</span>
+                                <span class="badge bg-secondary">{{ $lead->status }}</span>
                             @endif
                         </td>
                         <td>

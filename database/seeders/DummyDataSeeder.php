@@ -76,8 +76,9 @@ class DummyDataSeeder extends Seeder
         }
 
         // Leads
-        for ($i = 1; $i <= 30; $i++) {
-            Lead::create([
+        for ($i = 1; $i <= 50; $i++) {
+            $date = $faker->dateTimeBetween('-60 days', 'now');
+            $lead = new Lead([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
                 'phone' => $faker->phoneNumber,
@@ -88,6 +89,9 @@ class DummyDataSeeder extends Seeder
                 'ip_address' => $faker->ipv4,
                 'user_agent' => $faker->userAgent,
             ]);
+            $lead->created_at = $date;
+            $lead->updated_at = $date;
+            $lead->save();
         }
     }
 }

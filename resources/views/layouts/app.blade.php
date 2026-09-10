@@ -97,6 +97,11 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mb-2">
+                                    <a class="nav-link {{ request()->routeIs('admin.reviews.*') ? 'active fw-bold text-primary' : 'text-dark' }}" href="{{ route('admin.reviews.index') }}">
+                                        <i class="bi bi-star-half me-2"></i> Reviews
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-2">
                                     <a class="nav-link {{ request()->routeIs('admin.blogs.*') ? 'active fw-bold' : 'text-dark' }}" href="{{ route('admin.blogs.index') }}">
                                         <i class="bi bi-journal-text me-2"></i> Blogs
                                     </a>
@@ -111,12 +116,23 @@
                                         <i class="bi bi-hash me-2"></i> Tags
                                     </a>
                                 </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link {{ request()->routeIs('admin.leads.*') ? 'active fw-bold' : 'text-dark' }}" href="{{ route('admin.leads.index') }}">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->routeIs('admin.leads.*') ? 'active text-primary' : 'text-dark' }}" href="{{ route('admin.leads.index') }}">
                                         <i class="bi bi-person-lines-fill me-2"></i> Leads
                                     </a>
                                 </li>
-                                <hr>
+
+                                <!-- Reports -->
+                                <li class="nav-item mt-3 mb-1">
+                                    <span class="text-muted small fw-bold text-uppercase px-3">Analytics</span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->routeIs('admin.reports.*') ? 'active text-primary' : 'text-dark' }}" href="{{ route('admin.reports.index') }}">
+                                        <i class="bi bi-file-earmark-spreadsheet me-2"></i> Reports
+                                    </a>
+                                </li>
+
+                                <hr class="my-3">
                                 <li class="nav-item mb-2">
                                     <a class="nav-link {{ request()->routeIs('admin.profile') ? 'active fw-bold' : 'text-dark' }}" href="{{ route('admin.profile') }}">
                                         <i class="bi bi-person-gear me-2"></i> Profile Settings

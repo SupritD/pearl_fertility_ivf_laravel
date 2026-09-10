@@ -7,21 +7,19 @@
             <h2>Dashboard</h2>
             <p class="text-muted mb-0">Welcome back! Here is a summary of your website's activity.</p>
         </div>
-        <div class="col-md-8 text-end">
-            <form method="GET" action="{{ route('admin.dashboard') }}" class="d-inline-flex align-items-center justify-content-end gap-2">
-                <div>
-                    <label class="form-label small text-muted mb-0 text-start d-block">Start Date</label>
-                    <input type="date" name="start_date" class="form-control form-control-sm" value="{{ $startDate }}">
-                </div>
-                <div>
-                    <label class="form-label small text-muted mb-0 text-start d-block">End Date</label>
-                    <input type="date" name="end_date" class="form-control form-control-sm" value="{{ $endDate }}">
-                </div>
-                <div class="mt-4">
-                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
-                    <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-secondary">Reset</a>
-                </div>
+        <div class="col-md-8 text-end d-flex justify-content-end align-items-center gap-2">
+            <form method="GET" action="{{ route('admin.dashboard') }}" class="d-inline-flex align-items-center gap-1 m-0">
+                <input type="date" name="start_date" class="form-control form-control-sm" value="{{ request('start_date') }}" title="Start Date" required>
+                <input type="date" name="end_date" class="form-control form-control-sm" value="{{ request('end_date') }}" title="End Date" required>
+                <button type="submit" class="btn btn-sm btn-outline-secondary">Go</button>
             </form>
+            <div class="btn-group shadow-sm" role="group">
+                <a href="{{ route('admin.dashboard', ['range' => 'today']) }}" class="btn btn-outline-primary {{ request('range') == 'today' ? 'active' : '' }}">Today</a>
+                <a href="{{ route('admin.dashboard', ['range' => 'weekly']) }}" class="btn btn-outline-primary {{ request('range') == 'weekly' ? 'active' : '' }}">This Week</a>
+                <a href="{{ route('admin.dashboard', ['range' => 'monthly']) }}" class="btn btn-outline-primary {{ request('range', 'monthly') == 'monthly' && !request('start_date') ? 'active' : '' }}">This Month</a>
+                <a href="{{ route('admin.dashboard', ['range' => 'yearly']) }}" class="btn btn-outline-primary {{ request('range') == 'yearly' ? 'active' : '' }}">This Year</a>
+                <a href="{{ route('admin.dashboard', ['range' => 'all_time']) }}" class="btn btn-outline-primary {{ request('range') == 'all_time' ? 'active' : '' }}">All Time</a>
+            </div>
         </div>
     </div>
 

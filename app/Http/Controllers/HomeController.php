@@ -18,8 +18,41 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $startDate = $request->input('start_date', Carbon::now()->subDays(30)->toDateString());
-        $endDate = $request->input('end_date', Carbon::now()->toDateString());
+        $startDateInput = $request->input('start_date');
+        $endDateInput = $request->input('end_date');
+
+        if ($startDateInput && $endDateInput) {
+            $range = 'custom';
+            $startDate = $startDateInput;
+            $endDate = $endDateInput;
+        } else {
+            $range = $request->input('range', 'monthly');
+            $now = Carbon::now();
+
+            switch ($range) {
+                case 'today':
+                    $startDate = Carbon::today()->toDateString();
+                    $endDate = Carbon::today()->toDateString();
+                    break;
+                case 'weekly':
+                    $startDate = Carbon::now()->startOfWeek()->toDateString();
+                    $endDate = Carbon::now()->endOfWeek()->toDateString();
+                    break;
+                case 'yearly':
+                    $startDate = Carbon::now()->startOfYear()->toDateString();
+                    $endDate = Carbon::now()->endOfYear()->toDateString();
+                    break;
+                case 'all_time':
+                    $startDate = Carbon::now()->subYears(10)->toDateString(); // Arbitrary far back date
+                    $endDate = Carbon::now()->toDateString();
+                    break;
+                case 'monthly':
+                default:
+                    $startDate = Carbon::now()->startOfMonth()->toDateString();
+                    $endDate = Carbon::now()->endOfMonth()->toDateString();
+                    break;
+            }
+        }
 
         // Leads Stats
         $totalLeads = Lead::count();
@@ -44,27 +77,47 @@ class HomeController extends Controller
                              ->pluck('count', 'status')
                              ->toArray();
 
-        $leadsOverTime = Lead::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
+        $leadsOverTimeQuery = Lead::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
                              ->select(\DB::raw('DATE(created_at) as date'), \DB::raw('count(*) as count'))
                              ->groupBy('date')
                              ->orderBy('date', 'ASC')
                              ->pluck('count', 'date')
                              ->toArray();
 
-        $period = \Carbon\CarbonPeriod::create($startDate, $endDate);
-        $chartDates = [];
-        $chartCounts = [];
-        foreach ($period as $date) {
-            $dateString = $date->format('Y-m-d');
-            $chartDates[] = $date->format('d M');
-            $chartCounts[] = $leadsOverTime[$dateString] ?? 0;
+        // Dynamically adjust the chart period based on range
+        if ($range == 'yearly' || $range == 'all_time') {
+            // Group by month instead for better visual if long period
+            $leadsOverTime = Lead::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
+                                 ->select(\DB::raw('DATE_FORMAT(created_at, "%Y-%m") as date'), \DB::raw('count(*) as count'))
+                                 ->groupBy('date')
+                                 ->orderBy('date', 'ASC')
+                                 ->pluck('count', 'date')
+                                 ->toArray();
+            
+            $period = \Carbon\CarbonPeriod::create($startDate, '1 month', $endDate);
+            $chartDates = [];
+            $chartCounts = [];
+            foreach ($period as $date) {
+                $dateString = $date->format('Y-m');
+                $chartDates[] = $date->format('M Y');
+                $chartCounts[] = $leadsOverTime[$dateString] ?? 0;
+            }
+        } else {
+            $period = \Carbon\CarbonPeriod::create($startDate, $endDate);
+            $chartDates = [];
+            $chartCounts = [];
+            foreach ($period as $date) {
+                $dateString = $date->format('Y-m-d');
+                $chartDates[] = $date->format('d M');
+                $chartCounts[] = $leadsOverTimeQuery[$dateString] ?? 0;
+            }
         }
 
         return view('admin.dashboard', compact(
             'totalLeads', 'newLeads', 'leadsToday', 'conversionRate', 
             'totalBlogs', 'publishedBlogs', 'totalSliders', 'totalCategories', 'topCategories',
             'recentLeads', 'recentBlogs', 'leadsByStatus', 'chartDates', 'chartCounts',
-            'startDate', 'endDate'
+            'range'
         ));
     }
 }

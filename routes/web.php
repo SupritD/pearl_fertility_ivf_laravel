@@ -34,16 +34,11 @@ Route::get('/cervical-cancer', [FrontendController::class, 'cervical_cancer'])->
 Route::get('/hysteroscopy', [FrontendController::class, 'hysteroscopy'])->name('frontend.hysteroscopy');
 Route::get('/doctor', [FrontendController::class, 'doctor'])->name('frontend.doctor');
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('frontend.blogs.index');
+Route::get('/blogs/{slug}', [FrontendController::class, 'show_blog'])->name('frontend.blogs.show');
+
 Route::get('/faqs', [FrontendController::class, 'faqs'])->name('frontend.faqs');
 Route::get('/contacts', [FrontendController::class, 'contacts'])->name('frontend.contacts');
 Route::get('/book-appointment', [FrontendController::class, 'book_appointment'])->name('frontend.book-appointment');
-Route::get('/blogs/why-choosing-the-best-lady-gynecologist-in-mumbai-matters-for-womens-health', [FrontendController::class, 'blog_why_choosing_the_best_lady_gynecologist_in_mumbai_matters_for_womens_health'])->name('frontend.blogs.why-choosing-the-best-lady-gynecologist-in-mumbai-matters-for-womens-health');
-Route::get('/blogs/who-needs-icsi-treatment-signs-you-should-consult-a-fertility-specialist-in-mumbai', [FrontendController::class, 'blog_who_needs_icsi_treatment_signs_you_should_consult_a_fertility_specialist_in_mumbai'])->name('frontend.blogs.who-needs-icsi-treatment-signs-you-should-consult-a-fertility-specialist-in-mumbai');
-Route::get('/blogs/low-cost-ivf-centre-in-mumbai-affordable-fertility-treatment-without-compromising-quality', [FrontendController::class, 'blog_low_cost_ivf_centre_in_mumbai_affordable_fertility_treatment_without_compromising_quality'])->name('frontend.blogs.low-cost-ivf-centre-in-mumbai-affordable-fertility-treatment-without-compromising-quality');
-Route::get('/blogs/how-to-choose-the-best-ivf-centre-in-mumbai-a-complete-guide-for-couples', [FrontendController::class, 'blog_how_to_choose_the_best_ivf_centre_in_mumbai_a_complete_guide_for_couples'])->name('frontend.blogs.how-to-choose-the-best-ivf-centre-in-mumbai-a-complete-guide-for-couples');
-Route::get('/blogs/ivf-treatment-in-mumbai-step-by-step-process-success-rates-benefits', [FrontendController::class, 'blog_ivf_treatment_in_mumbai_step_by_step_process_success_rates_benefits'])->name('frontend.blogs.ivf-treatment-in-mumbai-step-by-step-process-success-rates-benefits');
-Route::get('/blogs/why-consulting-a-lady-gynecologist-is-important-for-infertility-ivf-treatment-in-mumbai', [FrontendController::class, 'blog_why_consulting_a_lady_gynecologist_is_important_for_infertility_ivf_treatment_in_mumbai'])->name('frontend.blogs.why-consulting-a-lady-gynecologist-is-important-for-infertility-ivf-treatment-in-mumbai');
-Route::get('/blogs/icsi-treatment-for-infertility-a-breakthrough-hope-for-couples-at-pearl-fertility-ivf-mumbai', [FrontendController::class, 'blog_icsi_treatment_for_infertility_a_breakthrough_hope_for_couples_at_pearl_fertility_ivf_mumbai'])->name('frontend.blogs.icsi-treatment-for-infertility-a-breakthrough-hope-for-couples-at-pearl-fertility-ivf-mumbai');
 
 Auth::routes();
 

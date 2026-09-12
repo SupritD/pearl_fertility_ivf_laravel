@@ -8,7 +8,8 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $recent_blogs = \App\Models\Blog::where('is_published', true)->latest()->take(3)->get();
+        return view('frontend.index', compact('recent_blogs'));
     }
 
     public function about_us()
@@ -143,7 +144,30 @@ class FrontendController extends Controller
 
     public function blogs()
     {
-        return view('frontend.blogs');
+        $blogs = \App\Models\Blog::where('is_published', true)->latest()->paginate(9);
+        return view('frontend.blogs', compact('blogs'));
+    }
+
+    public function show_blog($slug)
+    {
+        $blog = \App\Models\Blog::where('slug', $slug)->where('is_published', true)->firstOrFail();
+        
+        $recent_blogs = \App\Models\Blog::where('is_published', true)
+            ->where('id', '!=', $blog->id)
+            ->latest()
+            ->take(3)
+            ->get();
+            
+        $related_blogs = \App\Models\Blog::where('is_published', true)
+            ->where('id', '!=', $blog->id)
+            ->whereHas('categories', function($q) use ($blog) {
+                $q->whereIn('categories.id', $blog->categories->pluck('id'));
+            })
+            ->latest()
+            ->take(3)
+            ->get();
+
+        return view('frontend.blogs.show', compact('blog', 'recent_blogs', 'related_blogs'));
     }
 
     public function faqs()
@@ -160,40 +184,4 @@ class FrontendController extends Controller
     {
         return view('frontend.book-appointment');
     }
-
-    public function blog_why_choosing_the_best_lady_gynecologist_in_mumbai_matters_for_womens_health()
-    {
-        return view('frontend.blogs.why-choosing-the-best-lady-gynecologist-in-mumbai-matters-for-womens-health');
-    }
-
-    public function blog_who_needs_icsi_treatment_signs_you_should_consult_a_fertility_specialist_in_mumbai()
-    {
-        return view('frontend.blogs.who-needs-icsi-treatment-signs-you-should-consult-a-fertility-specialist-in-mumbai');
-    }
-
-    public function blog_low_cost_ivf_centre_in_mumbai_affordable_fertility_treatment_without_compromising_quality()
-    {
-        return view('frontend.blogs.low-cost-ivf-centre-in-mumbai-affordable-fertility-treatment-without-compromising-quality');
-    }
-
-    public function blog_how_to_choose_the_best_ivf_centre_in_mumbai_a_complete_guide_for_couples()
-    {
-        return view('frontend.blogs.how-to-choose-the-best-ivf-centre-in-mumbai-a-complete-guide-for-couples');
-    }
-
-    public function blog_ivf_treatment_in_mumbai_step_by_step_process_success_rates_benefits()
-    {
-        return view('frontend.blogs.ivf-treatment-in-mumbai-step-by-step-process-success-rates-benefits');
-    }
-
-    public function blog_why_consulting_a_lady_gynecologist_is_important_for_infertility_ivf_treatment_in_mumbai()
-    {
-        return view('frontend.blogs.why-consulting-a-lady-gynecologist-is-important-for-infertility-ivf-treatment-in-mumbai');
-    }
-
-    public function blog_icsi_treatment_for_infertility_a_breakthrough_hope_for_couples_at_pearl_fertility_ivf_mumbai()
-    {
-        return view('frontend.blogs.icsi-treatment-for-infertility-a-breakthrough-hope-for-couples-at-pearl-fertility-ivf-mumbai');
-    }
-
 }

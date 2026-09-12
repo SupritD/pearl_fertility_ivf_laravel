@@ -440,3 +440,49 @@
 .text-pink {
     color: #e83e8c !important;
 }
+
+/* Global Pink Theme Overrides (Replacing Bootstrap Primary Blue) */
+.text-primary {
+    color: #e83e8c !important;
+}
+
+.bg-primary {
+    background-color: #e83e8c !important;
+}
+
+.btn-primary {
+    background-color: #e83e8c !important;
+    border-color: #e83e8c !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #d12c75 !important;
+    border-color: #c4266c !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-primary {
+    color: #e83e8c !important;
+    border-color: #e83e8c !important;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: #e83e8c !important;
+    border-color: #e83e8c !important;
+    color: #ffffff !important;
+}
+
+/* Link Hover Effect */
+a:not(.btn) {
+    transition: color 0.3s ease;
+}
+
+a:not(.btn):hover {
+    color: #e83e8c !important;
+}
+
+/* Footer Specific Overrides */
+footer a.text-white:hover {
+    color: #e83e8c !important;
+}

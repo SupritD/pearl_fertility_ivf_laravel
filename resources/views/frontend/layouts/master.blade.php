@@ -55,6 +55,7 @@
 
     @include('frontend.layouts.footer')
 
+    @if(config('app.show_dev_auth'))
     <!-- Sticky Dev Button -->
     <div class="dev-sticky-btn">
         <span class="text-white small text-center mb-1 fw-bold">Dev Auth</span>
@@ -65,6 +66,7 @@
             <a href="{{ route('register') }}">Register</a>
         @endauth
     </div>
+    @endif
 </body>
 
 </html>

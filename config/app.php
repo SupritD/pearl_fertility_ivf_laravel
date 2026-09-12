@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'show_dev_auth' => env('SHOW_DEV_AUTH', false),
+
 ];

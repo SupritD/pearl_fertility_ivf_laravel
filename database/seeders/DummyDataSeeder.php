@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Models\Slider;
+use App\Models\Appointment;
 use App\Models\Blog;
 use App\Models\Lead;
 use Faker\Factory as Faker;
@@ -107,6 +108,26 @@ class DummyDataSeeder extends Seeder
             $lead->created_at = $date;
             $lead->updated_at = $date;
             $lead->save();
+        }
+
+        // Appointments
+        Appointment::truncate();
+        $statuses = ['pending', 'confirmed', 'cancelled'];
+        $slots = ['9:00 a.m. - 12:00 p.m.', '12:00 p.m. - 4:00 p.m.', '4:00 p.m. - 8:00 p.m.'];
+        
+        for ($i = 1; $i <= 20; $i++) {
+            Appointment::create([
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'address' => $faker->streetAddress,
+                'city' => $faker->city,
+                'phone' => $faker->phoneNumber,
+                'email' => $faker->safeEmail,
+                'dob' => $faker->dateTimeBetween('-40 years', '-20 years')->format('Y-m-d'),
+                'slot' => $faker->randomElement($slots),
+                'message' => $faker->optional(0.7)->realText(100),
+                'status' => $faker->randomElement($statuses),
+            ]);
         }
     }
 }

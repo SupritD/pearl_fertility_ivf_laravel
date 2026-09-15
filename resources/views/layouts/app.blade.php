@@ -121,6 +121,11 @@
                                         <i class="bi bi-person-lines-fill me-2"></i> Leads
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->routeIs('admin.appointments.*') ? 'active text-primary fw-bold' : 'text-dark' }}" href="{{ route('admin.appointments.index') }}">
+                                        <i class="bi bi-calendar-check me-2"></i> Appointments
+                                    </a>
+                                </li>
 
                                 <!-- Reports -->
                                 <li class="nav-item mt-3 mb-1">

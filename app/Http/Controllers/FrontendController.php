@@ -8,8 +8,9 @@ class FrontendController extends Controller
 {
     public function index()
     {
+        $sliders = \App\Models\Slider::where('is_active', true)->orderBy('priority', 'asc')->get();
         $recent_blogs = \App\Models\Blog::where('is_published', true)->latest()->take(3)->get();
-        return view('frontend.index', compact('recent_blogs'));
+        return view('frontend.index', compact('sliders', 'recent_blogs'));
     }
 
     public function about_us()

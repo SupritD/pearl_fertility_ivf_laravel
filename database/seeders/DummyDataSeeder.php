@@ -39,17 +39,32 @@ class DummyDataSeeder extends Seeder
         }
 
         // Sliders
-        for ($i = 1; $i <= 20; $i++) {
-            Slider::create([
-                'image_desktop' => 'sliders/dummy.jpg',
-                'heading' => 'Slider Heading ' . $i . ' ' . $faker->sentence(3),
-                'subheading' => $faker->sentence(5),
-                'btn_text' => 'Click Here',
-                'btn_url' => '#',
+        Slider::truncate();
+        $sliders = [
+            [
+                'image_desktop' => 'sliders/banner_1.jpg',
+                'heading' => 'Nova Fertility Clinic',
+                'subheading' => 'Guiding hearts, nurturing dreams. Compassionate pathways to parenthood.',
+                'btn_text' => 'Learn More',
+                'btn_url' => '/about-us',
                 'is_active' => true,
-                'priority' => $faker->numberBetween(1, 100),
+                'priority' => 1,
                 'created_by' => $adminId,
-            ]);
+            ],
+            [
+                'image_desktop' => 'sliders/banner_2.jpg',
+                'heading' => 'Start Your Journey',
+                'subheading' => 'Personalized, compassionate care at our state-of-the-art IVF center.',
+                'btn_text' => 'Book Consultation',
+                'btn_url' => '/contact',
+                'is_active' => true,
+                'priority' => 2,
+                'created_by' => $adminId,
+            ],
+        ];
+
+        foreach ($sliders as $sliderData) {
+            Slider::create($sliderData);
         }
 
         // Blogs

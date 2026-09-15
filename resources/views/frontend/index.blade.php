@@ -6,20 +6,33 @@
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="{{ asset('assets/images/banners/banner1.jpg') }}" alt="Welcome to Pearl Fertility and IVF">
-                <div class="banner-caption">
-                    <h1 class="display-4 fw-bold mb-3">Where Miracles are Conceived with Care</h1>
-                    <p class="lead mb-4">-Trust the best for your Life's Biggest Dream.</p>
+            @forelse ($sliders as $slider)
+                <div class="swiper-slide">
+                    <img src="{{ asset('storage/' . $slider->image_desktop) }}" alt="{{ $slider->image_alt ?? 'Pearl Fertility and IVF' }}">
+                    <div class="banner-caption">
+                        <h1 class="display-4 fw-bold mb-3">{{ $slider->heading }}</h1>
+                        <p class="lead mb-4">{{ $slider->subheading }}</p>
+                        @if ($slider->btn_text && $slider->btn_url)
+                            <a href="{{ $slider->btn_url }}" class="btn btn-primary">{{ $slider->btn_text }}</a>
+                        @endif
+                    </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="{{ asset('assets/images/banners/banner2.jpg') }}" alt="Advanced IVF Laboratory">
-                <div class="banner-caption">
-                    <h1 class="display-4 fw-bold mb-3">Building Families, Creating Futures</h1>
-                    <p class="lead mb-4">-Guiding You on Your Path to Parenthood.</p>
+            @empty
+                <div class="swiper-slide">
+                    <img src="{{ asset('assets/images/banners/banner1.jpg') }}" alt="Welcome to Pearl Fertility and IVF">
+                    <div class="banner-caption">
+                        <h1 class="display-4 fw-bold mb-3">Where Miracles are Conceived with Care</h1>
+                        <p class="lead mb-4">-Trust the best for your Life's Biggest Dream.</p>
+                    </div>
                 </div>
-            </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('assets/images/banners/banner2.jpg') }}" alt="Advanced IVF Laboratory">
+                    <div class="banner-caption">
+                        <h1 class="display-4 fw-bold mb-3">Building Families, Creating Futures</h1>
+                        <p class="lead mb-4">-Guiding You on Your Path to Parenthood.</p>
+                    </div>
+                </div>
+            @endforelse
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>

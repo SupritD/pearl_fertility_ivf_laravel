@@ -23,15 +23,50 @@
 }
 
 .navbar .dropdown-menu.mega-menu-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin-top: 0;
     border: none;
     border-radius: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+}
+
+@media all and (min-width: 992px) {
+    .navbar .dropdown-menu.mega-menu-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
+}
+
+@media all and (max-width: 991px) {
+    .navbar .dropdown-menu.mega-menu-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding: 1rem;
+    }
+    .mega-menu-column {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Make the mobile menu scrollable and full screen height */
+    .navbar-collapse.show {
+        max-height: calc(100vh - 98px);
+        height: calc(100vh - 98px);
+        overflow-y: auto;
+        background-color: #ffffff;
+        padding-bottom: 2rem;
+    }
+    
+    .navbar-collapse.collapsing {
+        background-color: #ffffff;
+    }
+    
+    /* Ensure content is tall enough so the opening animation travels full screen */
+    .navbar-collapse .navbar-nav {
+        min-height: calc(100vh - 180px);
+    }
 }
 
 .mega-menu-column h6 {
@@ -486,3 +521,22 @@ a:not(.btn):hover {
 footer a.text-white:hover {
     color: #e83e8c !important;
 }
+
+/* Page Header Banner */
+.page-header {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 250px;
+    margin-bottom: 30px;
+}
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+

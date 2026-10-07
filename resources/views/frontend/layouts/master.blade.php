@@ -7,8 +7,9 @@
     <!-- Primary Meta Tags -->
     <title>@yield('meta_title', 'Pearl Fertility and IVF')</title>
     <meta name="title" content="@yield('meta_title', 'Pearl Fertility and IVF')">
-    <meta name="description" content="@yield('meta_description', 'Default description for Pearl Fertility and IVF.')">
+    <meta name="description" content="@yield('meta_description', 'Pearl Fertility and IVF.')">
     <meta name="keywords" content="@yield('meta_keywords', 'IVF, fertility, clinic, mumbai')">
+    <meta name="google-site-verification" content="Hl4G_erBmkmLmhVDw811l22p3-ZKEMjKh9h5TiA4j6o" />
     <link rel="canonical" href="@yield('canonical_url', url()->current())">
     <link rel="icon" type="image/png" href="{{ asset('assets/images/logo/pearl-logo.png') }}">
 
@@ -17,7 +18,7 @@
     <meta property="og:url" content="@yield('og_url', url()->current())">
     <meta property="og:title" content="@yield('og_title', View::getSection('meta_title', 'Pearl Fertility and IVF'))">
     <meta property="og:description"
-        content="@yield('og_description', View::getSection('meta_description', 'Default description for Pearl Fertility and IVF.'))">
+        content="@yield('og_description', View::getSection('meta_description', 'Pearl Fertility and IVF.'))">
     <meta property="og:image" content="@yield('og_image', asset('assets/images/logo/pearl-logo.png'))">
 
     <!-- Twitter -->
@@ -26,7 +27,7 @@
     <meta property="twitter:title"
         content="@yield('og_title', View::getSection('meta_title', 'Pearl Fertility and IVF'))">
     <meta property="twitter:description"
-        content="@yield('og_description', View::getSection('meta_description', 'Default description for Pearl Fertility and IVF.'))">
+        content="@yield('og_description', View::getSection('meta_description', 'Pearl Fertility and IVF.'))">
     <meta property="twitter:image" content="@yield('og_image', asset('assets/images/logo/pearl-logo.png'))">
 
     <!-- Schema Markup -->
@@ -43,6 +44,26 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3WYDS5F308"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3WYDS5F308');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics (Legacy) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79657248-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-79657248-2");
+    </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -56,16 +77,16 @@
     @include('frontend.layouts.footer')
 
     @if(config('app.show_dev_auth'))
-    <!-- Sticky Dev Button -->
-    <div class="dev-sticky-btn">
-        <span class="text-white small text-center mb-1 fw-bold">Dev Auth</span>
-        @auth
-            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-        @else
-            <a href="{{ route('login') }}">Login</a>
-            <a href="{{ route('register') }}">Register</a>
-        @endauth
-    </div>
+        <!-- Sticky Dev Button -->
+        <div class="dev-sticky-btn">
+            <span class="text-white small text-center mb-1 fw-bold">Dev Auth</span>
+            @auth
+                <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a>
+            @endauth
+        </div>
     @endif
 </body>
 

@@ -17,7 +17,15 @@ class DummyDataSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $adminId = \App\Models\User::first()->id ?? 1;
+        $admin = \App\Models\User::firstOrCreate(
+            ['email' => 'admin@admin.com'],
+            [
+                'name' => 'Admin User',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                'is_admin' => true,
+            ]
+        );
+        $adminId = $admin->id;
 
         // Categories
         for ($i = 1; $i <= 20; $i++) {
@@ -110,13 +118,42 @@ class DummyDataSeeder extends Seeder
             $lead->save();
         }
 
+        // Insert a repeated lead
+        $repeatedLeadDate = \Carbon\Carbon::now();
+        $lead1 = new Lead([
+            'name' => 'John Doe (Repeat)',
+            'email' => 'repeat@johndoe.com',
+            'phone' => '123-456-7890',
+            'subject' => 'First Inquiry',
+            'message' => 'Hello there',
+            'status' => 'New',
+            'source' => 'Website',
+        ]);
+        $lead1->created_at = $repeatedLeadDate->copy()->subDays(5);
+        $lead1->updated_at = $repeatedLeadDate->copy()->subDays(5);
+        $lead1->save();
+
+        $lead2 = new Lead([
+            'name' => 'John Doe (Repeat)',
+            'email' => 'repeat@johndoe.com', // Repeated email
+            'phone' => '098-765-4321', // Different phone
+            'subject' => 'Follow up Inquiry',
+            'message' => 'Just following up',
+            'status' => 'New',
+            'source' => 'Website',
+        ]);
+        $lead2->created_at = $repeatedLeadDate;
+        $lead2->updated_at = $repeatedLeadDate;
+        $lead2->save();
+
         // Appointments
         Appointment::truncate();
         $statuses = ['pending', 'confirmed', 'cancelled'];
         $slots = ['9:00 a.m. - 12:00 p.m.', '12:00 p.m. - 4:00 p.m.', '4:00 p.m. - 8:00 p.m.'];
         
         for ($i = 1; $i <= 20; $i++) {
-            Appointment::create([
+            $date = $faker->dateTimeBetween('-30 days', 'now');
+            $appt = new Appointment([
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
                 'address' => $faker->streetAddress,
@@ -128,6 +165,80 @@ class DummyDataSeeder extends Seeder
                 'message' => $faker->optional(0.7)->realText(100),
                 'status' => $faker->randomElement($statuses),
             ]);
+            $appt->created_at = $date;
+            $appt->updated_at = $date;
+            $appt->save();
+        }
+
+        // Add explicitly repeated appointment
+        $apptDate = \Carbon\Carbon::now();
+        $appt1 = new Appointment([
+            'first_name' => 'Jane',
+            'last_name' => 'Smith (Repeat)',
+            'address' => '123 Main St',
+            'city' => 'Anytown',
+            'phone' => '555-123-4567',
+            'email' => 'jane.repeat@smith.com',
+            'dob' => '1990-01-01',
+            'slot' => '9:00 a.m. - 12:00 p.m.',
+            'message' => 'First appt',
+            'status' => 'confirmed',
+        ]);
+        $appt1->created_at = $apptDate->copy()->subDays(10);
+        $appt1->updated_at = $apptDate->copy()->subDays(10);
+        $appt1->save();
+
+        $appt2 = new Appointment([
+            'first_name' => 'Jane',
+            'last_name' => 'Smith (Repeat)',
+            'address' => '123 Main St',
+            'city' => 'Anytown',
+            'phone' => '555-999-8888', // Different phone
+            'email' => 'jane.repeat@smith.com', // Repeated email
+            'dob' => '1990-01-01',
+            'slot' => '12:00 p.m. - 4:00 p.m.',
+            'message' => 'Follow up appt',
+            'status' => 'pending',
+        ]);
+        $appt2->created_at = $apptDate;
+        $appt2->updated_at = $apptDate;
+        $appt2->save();
+
+        // Reviews
+        \App\Models\Review::truncate();
+        $reviews = [
+            [
+                'patient_name' => 'SNEHA BHIWANDKAR',
+                'review_text' => "Dr. Pritimala is incredable. Not only has she taken great care of my health, but also she is lovely to speak with at every appointment thank you doctor",
+                'rating' => 5,
+                'is_published' => true,
+                'review_date' => now()->subMonths(2)->toDateString(),
+            ],
+            [
+                'patient_name' => 'SHOBA GOSWAMI',
+                'review_text' => "It's a great experience to have such a talented doctor like doctor pritimala gangurde kadam to achieve my motherhood journey. Thanks a lot, Ma'am. I am always will be grateful to you",
+                'rating' => 5,
+                'is_published' => true,
+                'review_date' => now()->subMonths(6)->toDateString(),
+            ],
+            [
+                'patient_name' => 'CHANCHALA KAMBLE',
+                'review_text' => "A very good IVF center.Dr. Pritimala is very caring and cooperative. In every appointment she is taking proper care of my health. Thank you madam for your kind support.",
+                'rating' => 5,
+                'is_published' => true,
+                'review_date' => now()->subMonths(6)->toDateString(),
+            ],
+            [
+                'patient_name' => 'Yash Shah',
+                'review_text' => "Thank you pritimala maam for your efforts and guidance. Because of your precise decisions and experience of correct medication our family is completed. Highly recommended.",
+                'rating' => 5,
+                'is_published' => true,
+                'review_date' => now()->subMonths(6)->toDateString(),
+            ],
+        ];
+
+        foreach ($reviews as $reviewData) {
+            \App\Models\Review::create($reviewData);
         }
     }
 }

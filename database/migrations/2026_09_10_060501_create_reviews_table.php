@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('review_text');
             $table->integer('rating')->default(5);
             $table->string('image')->nullable();
+            $table->date('review_date')->nullable();
             $table->boolean('is_published')->default(true);
             $table->timestamps();
         });

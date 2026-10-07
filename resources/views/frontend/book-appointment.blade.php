@@ -19,7 +19,12 @@
                 <h2 class="fw-bold mb-4">Online Appointment Form</h2>
                 <p class="text-muted lh-lg mb-4">Please fill out the form below to request an appointment. Our team will get back to you shortly.</p>
                 
-                <form action="#" method="post" class="contact-form">
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                <form action="{{ route('frontend.book-appointment.store') }}" method="POST" class="contact-form">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <input type="text" name="first_name" class="form-control border-secondary border-opacity-25 py-3 shadow-none bg-transparent" placeholder="First Name" required>

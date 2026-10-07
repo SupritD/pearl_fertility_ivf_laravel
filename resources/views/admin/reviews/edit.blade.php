@@ -42,6 +42,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="review_date" class="form-label">Review Date (Optional)</label>
+                    <input type="date" class="form-control" id="review_date" name="review_date" value="{{ old('review_date', $review->review_date ? \Carbon\Carbon::parse($review->review_date)->format('Y-m-d') : '') }}">
+                </div>
+
+                <div class="mb-3">
                     <label for="review_text" class="form-label">Review Text</label>
                     <textarea class="form-control" id="summernote" name="review_text" rows="4" required>{{ old('review_text', $review->review_text) }}</textarea>
                 </div>

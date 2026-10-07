@@ -3,11 +3,17 @@
 @section('content')
 <div class="container-fluid">
     <div class="row mb-4">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <h2>Reviews / Testimonials</h2>
         </div>
-        <div class="col-md-4 text-end">
-            <a href="{{ route('admin.reviews.create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add New Review</a>
+        <div class="col-md-6 text-end d-flex justify-content-end align-items-center">
+            <form action="{{ route('admin.reviews.index') }}" method="GET" class="me-3">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search patient name..." value="{{ request('q') }}">
+                    <button type="submit" class="btn btn-outline-secondary">Search</button>
+                </div>
+            </form>
+            <a href="{{ route('admin.reviews.create') }}" class="btn btn-primary text-nowrap"><i class="bi bi-plus-circle"></i> Add New Review</a>
         </div>
     </div>
 

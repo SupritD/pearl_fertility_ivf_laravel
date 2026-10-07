@@ -15,11 +15,32 @@ class LeadController extends Controller
     {
         $query = Lead::query();
         if (request('q')) {
-            $query->where('name', 'like', '%' . request('q') . '%')
+            $query->where(function($q) {
+                $q->where('name', 'like', '%' . request('q') . '%')
                   ->orWhere('email', 'like', '%' . request('q') . '%')
                   ->orWhere('phone', 'like', '%' . request('q') . '%');
+            });
+        }
+        if (request('status')) {
+            $query->where('status', request('status'));
+        }
+        if (request('start_date') && request('end_date')) {
+            $query->whereBetween('created_at', [request('start_date') . ' 00:00:00', request('end_date') . ' 23:59:59']);
+        } elseif (request('start_date')) {
+            $query->whereDate('created_at', '>=', request('start_date'));
+        } elseif (request('end_date')) {
+            $query->whereDate('created_at', '<=', request('end_date'));
         }
         $leads = $query->latest()->paginate(10);
+        
+        foreach ($leads as $lead) {
+            $lead->is_repeated = Lead::where('id', '!=', $lead->id)
+                ->where(function($q) use ($lead) {
+                    if ($lead->email) $q->where('email', $lead->email);
+                    if ($lead->phone) $q->orWhere('phone', $lead->phone);
+                })->exists();
+        }
+
         return view('admin.leads.index', compact('leads'));
     }
 
@@ -44,7 +65,13 @@ class LeadController extends Controller
      */
     public function show(Lead $lead)
     {
-        return view('admin.leads.show', compact('lead'));
+        $relatedLeads = Lead::where('id', '!=', $lead->id)
+            ->where(function($q) use ($lead) {
+                if ($lead->email) $q->where('email', $lead->email);
+                if ($lead->phone) $q->orWhere('phone', $lead->phone);
+            })->latest()->get();
+
+        return view('admin.leads.show', compact('lead', 'relatedLeads'));
     }
 
     /**

@@ -13,11 +13,40 @@
 @endif
 
 <div class="card shadow mb-4 border-0">
-    <div class="card-header py-3 bg-white d-flex justify-content-between align-items-center border-bottom-0">
-        <h6 class="m-0 font-weight-bold text-primary">All Appointments</h6>
-        <form action="{{ route('admin.appointments.index') }}" method="GET" class="d-flex">
-            <input type="text" name="q" class="form-control form-control-sm me-2" placeholder="Search name, email, phone..." value="{{ request('q') }}">
-            <button type="submit" class="btn btn-sm btn-primary"><i class="bi bi-search"></i></button>
+    <div class="card-header py-3 bg-white border-bottom-0">
+        <div class="row align-items-center mb-3">
+            <div class="col">
+                <h6 class="m-0 font-weight-bold text-primary">All Appointments</h6>
+            </div>
+            @if(request()->hasAny(['q', 'status', 'start_date', 'end_date']) && (request('q') != '' || request('status') != '' || request('start_date') != '' || request('end_date') != ''))
+                <div class="col-auto">
+                    <a href="{{ route('admin.appointments.index') }}" class="btn btn-sm btn-outline-secondary">Clear Filters</a>
+                </div>
+            @endif
+        </div>
+        <form action="{{ route('admin.appointments.index') }}" method="GET">
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <input type="date" name="start_date" class="form-control form-control-sm" value="{{ request('start_date') }}" title="Start Date">
+                </div>
+                <div class="col-md-3">
+                    <input type="date" name="end_date" class="form-control form-control-sm" value="{{ request('end_date') }}" title="End Date">
+                </div>
+                <div class="col-md-2">
+                    <select name="status" class="form-select form-select-sm" title="Filter by status">
+                        <option value="">All Statuses</option>
+                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="confirmed" {{ request('status') == 'confirmed' ? 'selected' : '' }}>Confirmed</option>
+                        <option value="cancelled" {{ request('status') == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="q" class="form-control" placeholder="Search name, email, phone..." value="{{ request('q') }}">
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Search</button>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <div class="card-body">
@@ -39,7 +68,12 @@
                     @forelse($appointments as $appointment)
                         <tr>
                             <td>#{{ $appointment->id }}</td>
-                            <td>{{ $appointment->first_name }} {{ $appointment->last_name }}</td>
+                            <td>
+                                {{ $appointment->first_name }} {{ $appointment->last_name }}
+                                @if($appointment->is_repeated)
+                                    <span class="badge bg-danger ms-1" style="font-size: 0.65rem;">Repeated</span>
+                                @endif
+                            </td>
                             <td>{{ $appointment->phone }}</td>
                             <td>{{ $appointment->email }}</td>
                             <td>{{ $appointment->slot ?: 'N/A' }}</td>

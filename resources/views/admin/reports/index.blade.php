@@ -30,6 +30,7 @@
                             <label class="form-label fw-bold">1. Select Data Type</label>
                             <select name="data_type" id="data_type" class="form-select" onchange="toggleColumns()">
                                 <option value="leads">Leads</option>
+                                <option value="appointments">Appointments</option>
                                 <option value="blogs">Blogs</option>
                             </select>
                         </div>
@@ -74,6 +75,22 @@
                                     <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="created_at" disabled> <label class="form-check-label">Date Created</label></div></div>
                                 </div>
                             </div>
+
+                            <!-- Appointments Columns -->
+                            <div id="appointments_columns" class="column-group d-none">
+                                <div class="row">
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="id" checked disabled> <label class="form-check-label">ID</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="first_name" checked disabled> <label class="form-check-label">First Name</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="last_name" checked disabled> <label class="form-check-label">Last Name</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="email" checked disabled> <label class="form-check-label">Email</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="phone" checked disabled> <label class="form-check-label">Phone</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="dob" disabled> <label class="form-check-label">DOB</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="city" disabled> <label class="form-check-label">City</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="slot" checked disabled> <label class="form-check-label">Requested Slot</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="status" checked disabled> <label class="form-check-label">Status</label></div></div>
+                                    <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" name="columns[]" value="created_at" checked disabled> <label class="form-check-label">Date Submitted</label></div></div>
+                                </div>
+                            </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary"><i class="bi bi-download"></i> Export CSV</button>
@@ -91,6 +108,7 @@
         // Hide all
         document.getElementById('leads_columns').classList.add('d-none');
         document.getElementById('blogs_columns').classList.add('d-none');
+        document.getElementById('appointments_columns').classList.add('d-none');
         
         // Disable all checkboxes to prevent submitting hidden ones
         var allCheckboxes = document.querySelectorAll('.column-group input[type="checkbox"]');

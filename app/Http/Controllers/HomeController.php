@@ -56,19 +56,50 @@ class HomeController extends Controller
 
         // Leads Stats
         $totalLeads = Lead::count();
-        $newLeads = Lead::where('status', 'New')->count();
+        $lastMonthLeads = Lead::whereMonth('created_at', Carbon::now()->subMonth()->month)
+                              ->whereYear('created_at', Carbon::now()->subMonth()->year)
+                              ->count();
+        $currentMonthLeads = Lead::whereMonth('created_at', Carbon::now()->month)
+                                 ->whereYear('created_at', Carbon::now()->year)
+                                 ->count();
         $leadsToday = Lead::whereDate('created_at', Carbon::today())->count();
-        $convertedLeads = Lead::where('status', 'Converted')->count();
-        $conversionRate = $totalLeads > 0 ? round(($convertedLeads / $totalLeads) * 100) : 0;
+
+        // Appointments Stats
+        $totalAppointments = \App\Models\Appointment::count();
+        $lastMonthAppointments = \App\Models\Appointment::whereMonth('created_at', Carbon::now()->subMonth()->month)
+                                                        ->whereYear('created_at', Carbon::now()->subMonth()->year)
+                                                        ->count();
+        $currentMonthAppointments = \App\Models\Appointment::whereMonth('created_at', Carbon::now()->month)
+                                                           ->whereYear('created_at', Carbon::now()->year)
+                                                           ->count();
+        $appointmentsToday = \App\Models\Appointment::whereDate('created_at', Carbon::today())->count();
 
         // Content Stats
         $totalBlogs = Blog::count();
         $publishedBlogs = Blog::where('is_published', true)->count();
         $totalSliders = Slider::count();
         $totalCategories = Category::count();
+
         $topCategories = Category::withCount('blogs')->orderBy('blogs_count', 'desc')->take(4)->get();
 
         $recentLeads = Lead::latest()->take(5)->get();
+        foreach ($recentLeads as $lead) {
+            $lead->is_repeated = Lead::where('id', '!=', $lead->id)
+                ->where(function($q) use ($lead) {
+                    if ($lead->email) $q->where('email', $lead->email);
+                    if ($lead->phone) $q->orWhere('phone', $lead->phone);
+                })->exists();
+        }
+
+        $recentAppointments = \App\Models\Appointment::latest()->take(5)->get();
+        foreach ($recentAppointments as $appointment) {
+            $appointment->is_repeated = \App\Models\Appointment::where('id', '!=', $appointment->id)
+                ->where(function($q) use ($appointment) {
+                    if ($appointment->email) $q->where('email', $appointment->email);
+                    if ($appointment->phone) $q->orWhere('phone', $appointment->phone);
+                })->exists();
+        }
+
         $recentBlogs = Blog::latest()->take(5)->get();
 
         $leadsByStatus = Lead::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
@@ -77,7 +108,20 @@ class HomeController extends Controller
                              ->pluck('count', 'status')
                              ->toArray();
 
+        $appointmentsByStatus = \App\Models\Appointment::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
+                             ->select('status', \DB::raw('count(*) as count'))
+                             ->groupBy('status')
+                             ->pluck('count', 'status')
+                             ->toArray();
+
         $leadsOverTimeQuery = Lead::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
+                             ->select(\DB::raw('DATE(created_at) as date'), \DB::raw('count(*) as count'))
+                             ->groupBy('date')
+                             ->orderBy('date', 'ASC')
+                             ->pluck('count', 'date')
+                             ->toArray();
+
+        $appointmentsOverTimeQuery = \App\Models\Appointment::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
                              ->select(\DB::raw('DATE(created_at) as date'), \DB::raw('count(*) as count'))
                              ->groupBy('date')
                              ->orderBy('date', 'ASC')
@@ -93,30 +137,41 @@ class HomeController extends Controller
                                  ->orderBy('date', 'ASC')
                                  ->pluck('count', 'date')
                                  ->toArray();
+            $appointmentsOverTime = \App\Models\Appointment::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
+                                 ->select(\DB::raw('DATE_FORMAT(created_at, "%Y-%m") as date'), \DB::raw('count(*) as count'))
+                                 ->groupBy('date')
+                                 ->orderBy('date', 'ASC')
+                                 ->pluck('count', 'date')
+                                 ->toArray();
             
             $period = \Carbon\CarbonPeriod::create($startDate, '1 month', $endDate);
             $chartDates = [];
             $chartCounts = [];
+            $appointmentChartCounts = [];
             foreach ($period as $date) {
                 $dateString = $date->format('Y-m');
                 $chartDates[] = $date->format('M Y');
                 $chartCounts[] = $leadsOverTime[$dateString] ?? 0;
+                $appointmentChartCounts[] = $appointmentsOverTime[$dateString] ?? 0;
             }
         } else {
             $period = \Carbon\CarbonPeriod::create($startDate, $endDate);
             $chartDates = [];
             $chartCounts = [];
+            $appointmentChartCounts = [];
             foreach ($period as $date) {
                 $dateString = $date->format('Y-m-d');
                 $chartDates[] = $date->format('d M');
                 $chartCounts[] = $leadsOverTimeQuery[$dateString] ?? 0;
+                $appointmentChartCounts[] = $appointmentsOverTimeQuery[$dateString] ?? 0;
             }
         }
 
         return view('admin.dashboard', compact(
-            'totalLeads', 'newLeads', 'leadsToday', 'conversionRate', 
+            'totalLeads', 'lastMonthLeads', 'currentMonthLeads', 'leadsToday', 
+            'totalAppointments', 'lastMonthAppointments', 'currentMonthAppointments', 'appointmentsToday',
             'totalBlogs', 'publishedBlogs', 'totalSliders', 'totalCategories', 'topCategories',
-            'recentLeads', 'recentBlogs', 'leadsByStatus', 'chartDates', 'chartCounts',
+            'topCategories', 'recentLeads', 'recentAppointments', 'recentBlogs', 'leadsByStatus', 'appointmentsByStatus', 'chartDates', 'chartCounts', 'appointmentChartCounts',
             'range'
         ));
     }

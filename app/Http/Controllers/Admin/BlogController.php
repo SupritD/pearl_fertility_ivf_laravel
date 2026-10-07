@@ -7,8 +7,8 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -45,10 +45,13 @@ class BlogController extends Controller
         ]);
 
         $data = $request->except(['_token', 'image', 'categories', 'tags']);
+        if (isset($data['content'])) {
+            $data['content'] = clean($data['content']);
+        }
         $data['slug'] = Str::slug($request->title);
         $data['is_published'] = $request->has('is_published');
         $data['created_by'] = auth()->id();
-        
+
         if ($data['is_published'] && !$request->filled('published_at')) {
             $data['published_at'] = now();
         } elseif (!$data['is_published']) {
@@ -99,9 +102,12 @@ class BlogController extends Controller
         ]);
 
         $data = $request->except(['_token', '_method', 'image', 'categories', 'tags']);
+        if (isset($data['content'])) {
+            $data['content'] = clean($data['content']);
+        }
         $data['slug'] = Str::slug($request->title);
         $data['is_published'] = $request->has('is_published');
-        
+
         if ($data['is_published'] && !$blog->published_at) {
             $data['published_at'] = now();
         } elseif (!$data['is_published']) {
@@ -109,7 +115,8 @@ class BlogController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            if ($blog->image) Storage::disk('public')->delete($blog->image);
+            if ($blog->image)
+                Storage::disk('public')->delete($blog->image);
             $data['image'] = $request->file('image')->store('blogs', 'public');
         }
 
@@ -132,7 +139,8 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
-        if ($blog->image) Storage::disk('public')->delete($blog->image);
+        if ($blog->image)
+            Storage::disk('public')->delete($blog->image);
         $blog->categories()->detach();
         $blog->tags()->detach();
         $blog->delete();

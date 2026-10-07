@@ -15,12 +15,33 @@ class AppointmentController extends Controller
     {
         $query = Appointment::query();
         if (request('q')) {
-            $query->where('first_name', 'like', '%' . request('q') . '%')
+            $query->where(function($q) {
+                $q->where('first_name', 'like', '%' . request('q') . '%')
                   ->orWhere('last_name', 'like', '%' . request('q') . '%')
                   ->orWhere('email', 'like', '%' . request('q') . '%')
                   ->orWhere('phone', 'like', '%' . request('q') . '%');
+            });
+        }
+        if (request('status')) {
+            $query->where('status', request('status'));
+        }
+        if (request('start_date') && request('end_date')) {
+            $query->whereBetween('created_at', [request('start_date') . ' 00:00:00', request('end_date') . ' 23:59:59']);
+        } elseif (request('start_date')) {
+            $query->whereDate('created_at', '>=', request('start_date'));
+        } elseif (request('end_date')) {
+            $query->whereDate('created_at', '<=', request('end_date'));
         }
         $appointments = $query->latest()->paginate(10);
+        
+        foreach ($appointments as $appointment) {
+            $appointment->is_repeated = Appointment::where('id', '!=', $appointment->id)
+                ->where(function($q) use ($appointment) {
+                    if ($appointment->email) $q->where('email', $appointment->email);
+                    if ($appointment->phone) $q->orWhere('phone', $appointment->phone);
+                })->exists();
+        }
+
         return view('admin.appointments.index', compact('appointments'));
     }
 
@@ -29,7 +50,13 @@ class AppointmentController extends Controller
      */
     public function show(Appointment $appointment)
     {
-        return view('admin.appointments.show', compact('appointment'));
+        $relatedAppointments = Appointment::where('id', '!=', $appointment->id)
+            ->where(function($q) use ($appointment) {
+                if ($appointment->email) $q->where('email', $appointment->email);
+                if ($appointment->phone) $q->orWhere('phone', $appointment->phone);
+            })->latest()->get();
+
+        return view('admin.appointments.show', compact('appointment', 'relatedAppointments'));
     }
 
     /**
@@ -37,7 +64,7 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        return view('admin.appointments.show', compact('appointment')); 
+        return view('admin.appointments.show', compact('appointment'));
     }
 
     /**

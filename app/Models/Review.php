@@ -11,6 +11,7 @@ class Review extends Model
         'review_text',
         'rating',
         'image',
+        'review_date',
         'is_published',
     ];
 }

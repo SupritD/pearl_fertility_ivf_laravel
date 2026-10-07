@@ -37,6 +37,46 @@
                     <p><strong>User Agent:</strong> {{ $lead->user_agent ?? 'N/A' }}</p>
                 </div>
             </div>
+
+            @if($relatedLeads->isNotEmpty())
+            <div class="card mb-3 border-danger">
+                <div class="card-header bg-danger text-white">History: Related Leads (Same Email or Phone)</div>
+                <div class="card-body p-0">
+                    <table class="table table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>Date Submitted</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($relatedLeads as $relLead)
+                            <tr>
+                                <td>{{ $relLead->created_at->format('d M Y, h:i A') }}</td>
+                                <td>{{ $relLead->name }}</td>
+                                <td>
+                                    @if($relLead->status == 'New')
+                                        <span class="badge bg-primary">New</span>
+                                    @elseif($relLead->status == 'Contacted')
+                                        <span class="badge bg-warning">Contacted</span>
+                                    @elseif($relLead->status == 'Converted')
+                                        <span class="badge bg-success">Converted</span>
+                                    @elseif($relLead->status == 'Lost')
+                                        <span class="badge bg-danger">Lost</span>
+                                    @else
+                                        <span class="badge bg-secondary">{{ $relLead->status }}</span>
+                                    @endif
+                                </td>
+                                <td><a href="{{ route('admin.leads.show', $relLead->id) }}" class="btn btn-sm btn-outline-danger">View Details</a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            @endif
         </div>
 
         <div class="col-md-4">

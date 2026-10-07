@@ -100,5 +100,49 @@
             </div>
         </div>
     </div>
+
+    @if($relatedAppointments->isNotEmpty())
+    <div class="col-12 mt-4">
+        <div class="card shadow mb-4 border-danger">
+            <div class="card-header py-3 bg-danger text-white border-bottom-0">
+                <h6 class="m-0 font-weight-bold">History: Related Appointments (Same Email or Phone)</h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date Submitted</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($relatedAppointments as $relAppt)
+                            <tr>
+                                <td>{{ $relAppt->created_at->format('M d, Y h:i A') }}</td>
+                                <td>{{ $relAppt->first_name }} {{ $relAppt->last_name }}</td>
+                                <td>
+                                    @if($relAppt->status == 'pending')
+                                        <span class="badge bg-warning text-dark">Pending</span>
+                                    @elseif($relAppt->status == 'confirmed')
+                                        <span class="badge bg-success">Confirmed</span>
+                                    @else
+                                        <span class="badge bg-danger">Cancelled</span>
+                                    @endif
+                                </td>
+                                <td class="text-end">
+                                    <a href="{{ route('admin.appointments.show', $relAppt->id) }}" class="btn btn-sm btn-outline-danger">View Details</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 </div>
 @endsection

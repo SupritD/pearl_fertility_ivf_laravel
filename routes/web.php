@@ -38,11 +38,14 @@ Route::get('/blogs/{slug}', [FrontendController::class, 'show_blog'])->name('fro
 
 Route::get('/faqs', [FrontendController::class, 'faqs'])->name('frontend.faqs');
 Route::get('/contacts', [FrontendController::class, 'contacts'])->name('frontend.contacts');
+Route::post('/contacts', [FrontendController::class, 'store_lead'])->name('frontend.contacts.store')->middleware('throttle:5,1');
+
 Route::get('/book-appointment', [FrontendController::class, 'book_appointment'])->name('frontend.book-appointment');
+Route::post('/book-appointment', [FrontendController::class, 'store_appointment'])->name('frontend.book-appointment.store')->middleware('throttle:5,1');
 
 Auth::routes();
 
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     
     // Reports

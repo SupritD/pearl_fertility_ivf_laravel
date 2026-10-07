@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lead;
 use App\Models\Blog;
+use App\Models\Appointment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Response;
 
@@ -19,7 +20,7 @@ class ReportController extends Controller
     public function export(Request $request)
     {
         $request->validate([
-            'data_type' => 'required|in:leads,blogs',
+            'data_type' => 'required|in:leads,blogs,appointments',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
             'columns' => 'required|array|min:1',
@@ -49,6 +50,8 @@ class ReportController extends Controller
             // Fetch data
             if ($dataType === 'leads') {
                 $query = Lead::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59']);
+            } elseif ($dataType === 'appointments') {
+                $query = Appointment::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59']);
             } else {
                 $query = Blog::whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59']);
             }

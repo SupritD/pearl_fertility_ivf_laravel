@@ -27,7 +27,11 @@
             <!-- Enquiry Form -->
             <div class="col-lg-6 ps-lg-5">
                 <h2 class="fw-bold mb-4">Enquiry Form</h2>
-                <form action="#" method="post" class="contact-form">
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+                <form action="{{ route('frontend.contacts.store') }}" method="post" class="contact-form">
+                    @csrf
                     <div class="mb-4">
                         <input type="text" name="name" class="form-control border-secondary border-opacity-25 py-3 shadow-none bg-transparent" placeholder="Full Name" required>
                     </div>

@@ -10,7 +10,8 @@ class FrontendController extends Controller
     {
         $sliders = \App\Models\Slider::where('is_active', true)->orderBy('priority', 'asc')->get();
         $recent_blogs = \App\Models\Blog::where('is_published', true)->latest()->take(3)->get();
-        return view('frontend.index', compact('sliders', 'recent_blogs'));
+        $reviews = \App\Models\Review::where('is_published', true)->latest()->get();
+        return view('frontend.index', compact('sliders', 'recent_blogs', 'reviews'));
     }
 
     public function about_us()
@@ -184,5 +185,55 @@ class FrontendController extends Controller
     public function book_appointment()
     {
         return view('frontend.book-appointment');
+    }
+
+    public function store_lead(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'message' => 'required|string|max:2000',
+        ]);
+
+        \App\Models\Lead::create([
+            'name' => strip_tags($validated['name']),
+            'email' => strip_tags($validated['email']),
+            'phone' => strip_tags($validated['phone']),
+            'message' => strip_tags($validated['message']),
+            'status' => 'new',
+        ]);
+
+        return back()->with('success', 'Your enquiry has been submitted successfully! We will contact you soon.');
+    }
+
+    public function store_appointment(Request $request)
+    {
+        $validated = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'address' => 'nullable|string|max:500',
+            'city' => 'nullable|string|max:255',
+            'phone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'dob' => 'nullable|date',
+            'slot' => 'nullable|string|max:255',
+            'message' => 'nullable|string|max:2000',
+        ]);
+
+        \App\Models\Appointment::create([
+            'first_name' => strip_tags($validated['first_name']),
+            'last_name' => strip_tags($validated['last_name']),
+            'address' => isset($validated['address']) ? strip_tags($validated['address']) : null,
+            'city' => isset($validated['city']) ? strip_tags($validated['city']) : null,
+            'phone' => strip_tags($validated['phone']),
+            'email' => strip_tags($validated['email']),
+            'dob' => $validated['dob'] ?? null,
+            'slot' => isset($validated['slot']) ? strip_tags($validated['slot']) : null,
+            'message' => isset($validated['message']) ? strip_tags($validated['message']) : null,
+            'status' => 'pending',
+        ]);
+
+        return back()->with('success', 'Your appointment request has been submitted successfully! We will confirm with you shortly.');
     }
 }

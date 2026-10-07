@@ -10,7 +10,12 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        $reviews = Review::latest()->paginate(10);
+        $query = Review::query();
+        if (request('q')) {
+            $query->where('patient_name', 'like', '%' . request('q') . '%')
+                  ->orWhere('review_text', 'like', '%' . request('q') . '%');
+        }
+        $reviews = $query->latest()->paginate(10);
         return view('admin.reviews.index', compact('reviews'));
     }
 
@@ -26,6 +31,7 @@ class ReviewController extends Controller
             'review_text' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'review_date' => 'nullable|date',
         ]);
 
         $data = $request->except('image');
@@ -52,6 +58,7 @@ class ReviewController extends Controller
             'review_text' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'review_date' => 'nullable|date',
         ]);
 
         $data = $request->except('image');

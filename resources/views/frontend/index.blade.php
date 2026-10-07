@@ -394,7 +394,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <!-- Using placeholder for pregnant woman / doctor -->
-                    <img src="https://via.placeholder.com/600x500/e83e8c/ffffff?text=Doctor+and+Patient"
+                    <img src="{{ asset('assets/images/Caring-Prenatal-Checkup-Duo.jpg') }}"
                         alt="Doctor and Patient" title="Doctor and Patient" class="img-fluid rounded shadow-sm">
                 </div>
             </div>

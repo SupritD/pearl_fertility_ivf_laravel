@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'About Us - Pearl Fertility and IVF | Best IVF Center in Mumbai')
+@section('meta_description', 'Learn about Pearl Fertility and IVF, our expert team, state-of-the-art facilities, and our mission to provide the best fertility and IVF treatments in Mumbai.')
+@section('meta_keywords', 'About Pearl Fertility, IVF Center Mumbai, Dr. Pritimala Gangurde Kadam, Best Lady Gynecologist')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -58,7 +62,7 @@
     <div class="container py-4">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0 text-center">
-                <img src="{{ asset('assets/images/our-doctor.jpeg') }}" alt="Dr. Pritimala" class="img-fluid rounded-circle shadow-lg" style="max-width: 400px; border: 10px solid white;">
+                <img src="{{ asset('assets/images/Dr-Pritimala-Gangurde-Kadam.jpg') }}" alt="Dr. Pritimala Gangurde Kadam - Best Lady Gynecologist in Mumbai" title="Dr. Pritimala Gangurde Kadam - Best Lady Gynecologist in Mumbai" class="img-fluid rounded-circle shadow-lg" style="max-width: 400px; border: 10px solid white;">
             </div>
             <div class="col-lg-7">
                 <h2 class="fw-bold">Best Lady Gynecologist</h2>
@@ -113,7 +117,7 @@
                 <p class="text-muted small">Personal attention throughout the treatment.</p>
             </div>
             <div class="col-md-4 mb-4">
-                <i class="bi bi-ambulance fs-1 text-pink mb-3 d-block"></i>
+                <i class="bi bi-telephone fs-1 text-pink mb-3 d-block"></i>
                 <h5 class="fw-bold">Emergency Services</h5>
                 <p class="text-muted small">24/7 support for any emergency.</p>
             </div>

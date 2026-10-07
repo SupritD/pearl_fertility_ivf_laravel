@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'IVF Cost in Mumbai - Pearl Fertility And IVF')
+@section('meta_description', 'Pearl Fertility & IVF Offers Best IVF Treatment in Mumbai at cheapest IVF Cost in Mumbai only at Pearl Fertility And IVF Centre in Mumbai.')
+@section('meta_keywords', 'IVF cost in Mumbai, Best IVF Centre in Mumbai')
+
 @section('content')
 
     <!-- Page Banner -->

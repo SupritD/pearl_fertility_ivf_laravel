@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Blastocyst Transfer - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -50,7 +52,7 @@
                 </p>
             </div>
             <div class="col-lg-6 text-center d-flex">
-                <img src="https://pearlfertilityandivf.com/_images/balsto-1.jpg" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Blastocyst Transfer">
+                <img src="{{ asset('assets/images/balsto-1.jpg') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Blastocyst Transfer" title="Blastocyst Transfer">
             </div>
         </div>
     </div>

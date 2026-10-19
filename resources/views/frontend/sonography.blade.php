@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Comprehensive Sonography - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -36,7 +38,7 @@
                 </p>
             </div>
             <div class="col-lg-5 text-center mb-4">
-                <img src="{{ asset('web-page-images/sonography-img.jpg') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Comprehensive Sonography">
+                <img src="{{ asset('assets/images/sonography-img.jpg') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Comprehensive Sonography" title="Comprehensive Sonography">
             </div>
         </div>
         <div class="row">

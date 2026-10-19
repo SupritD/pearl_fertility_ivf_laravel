@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Donor Embryo - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->

@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Best Lady Gynecologist in Mumbai | Dr. Pritimala Kadam')
+@section('meta_description', 'Consult Dr. Pritimala Kadam, one of the best lady gynecologists in Mumbai. Expert care for pregnancy, PCOS, infertility, IVF & women’s health. Book appointment.')
+@section('meta_keywords', 'Best lady gynecologist in Mumbai, Best lady gynecologist in goregaon, Best lady gynecologist in malad, Best lady gynecologist in kandivali, Best lady gynecologist in borivali, Best lady gynecologist in dahisar')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -23,7 +27,7 @@
         <!-- Doctor 1 -->
         <div class="row align-items-center mb-5 pb-5 border-bottom border-white">
             <div class="col-lg-3 text-center mb-4 mb-lg-0">
-                <img src="https://pearlfertilityandivf.com/_images/ab3.webp" class="img-fluid rounded-circle border border-5 border-white shadow-sm" style="max-width: 250px;" alt="Dr. Pritimala Gangurde Kadam">
+                <img src="{{ asset('assets/images/Dr-Pritimala-Gangurde-Kadam.jpg') }}" class="img-fluid rounded-circle border border-5 border-white shadow-sm" style="max-width: 250px;" alt="Dr. Pritimala Gangurde Kadam" title="Dr. Pritimala Gangurde Kadam">
             </div>
             <div class="col-lg-6 ps-lg-4 mb-4 mb-lg-0">
                 <h3 class="fw-bold text-dark mb-1">Dr.Pritimala Gangurde Kadam</h3>
@@ -53,7 +57,7 @@
         <!-- Doctor 2 -->
         <div class="row align-items-center">
             <div class="col-lg-3 text-center mb-4 mb-lg-0">
-                <img src="https://pearlfertilityandivf.com/_images/dr.rupali.webp" class="img-fluid rounded-circle border border-5 border-white shadow-sm" style="max-width: 250px;" alt="Dr.Rupali Gangurde">
+                <img src="{{ asset('assets/images/Dr-Rupali-Gangurde.jpg') }}" class="img-fluid rounded-circle border border-5 border-white shadow-sm" style="max-width: 250px;" alt="Dr. Rupali Gangurde" title="Dr. Rupali Gangurde">
             </div>
             <div class="col-lg-6 ps-lg-4 mb-4 mb-lg-0">
                 <h3 class="fw-bold text-dark mb-1">Dr.Rupali Gangurde</h3>

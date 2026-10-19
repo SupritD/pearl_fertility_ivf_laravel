@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'PCOS Treatment in Mumbai by Pearl Fertility And IVF')
+@section('meta_description', 'Get the Best PCOS Treatment in Mumbai. Consult with our expert doctors and get genuine and reliable solution at one visit.')
+@section('meta_keywords', 'PCOS treatment in Mumbai, PCOS treatment in goregaon, PCOS treatment in malad, PCOS treatment in kandivali, PCOS treatment in borivali, PCOS treatment in dahisar')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -47,14 +51,14 @@
                 </p>
             </div>
             <div class="col-lg-6 text-center d-flex">
-                <img src="https://pearlfertilityandivf.com/web-page-images/PCOD-img.jpg" class="img-fluid w-100 shadow-sm" style="object-fit: cover;" alt="What is PCOD">
+                <img src="{{ asset('assets/images/PCOD-img.jpg') }}" class="img-fluid w-100 shadow-sm" style="object-fit: cover;" alt="What is PCOD" title="What is PCOD">
             </div>
         </div>
 
         <!-- Row 2 -->
         <div class="row align-items-stretch pt-2">
             <div class="col-lg-6 text-center d-flex mb-5 mb-lg-0">
-                <img src="https://pearlfertilityandivf.com/web-page-images/PCOD-img2.jpg" class="img-fluid w-100 shadow-sm" style="object-fit: cover;" alt="Cause of PCOD">
+                <img src="{{ asset('assets/images/PCOD-img2.jpg') }}" class="img-fluid w-100 shadow-sm" style="object-fit: cover;" alt="Cause of PCOD" title="Cause of PCOD">
             </div>
             <div class="col-lg-6 ps-lg-5 d-flex flex-column justify-content-center">
                 <h2 class="fw-bold text-dark mb-4">What Is Cause Of PCOD / PCOS?</h2>

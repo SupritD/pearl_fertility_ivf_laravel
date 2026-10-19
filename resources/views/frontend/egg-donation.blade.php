@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Egg Donation - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -29,7 +31,7 @@
                 <p class="text-muted lh-lg mb-0">Therefore, all women should be given full information about female egg donation so that they can take proper decision with regards to egg donation. Because of various legal and ethical issues along with lack of awareness among community about egg donation, we have tried writing this article.</p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/laproscopy-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Egg Donation">
+                <img src="{{ asset('assets/images/laproscopy-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Egg Donation" title="Egg Donation">
             </div>
         </div>
     </div>
@@ -40,7 +42,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0 text-center">
-                <img src="{{ asset('_images/donor.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Female Egg Donation">
+                <img src="{{ asset('assets/images/donor.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Female Egg Donation" title="Female Egg Donation">
             </div>
             <div class="col-lg-7 ps-lg-5">
                 <h3 class="fw-bold text-dark mb-4">What Should Be Kept In Mind For Female Egg Donation?</h3>

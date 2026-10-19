@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Best Doctors for Gynecologist & Obstetrics in Mumbai - Pearl Fertility And IVF')
+@section('meta_description', 'Expert gynecologist & obstetrics doctors in Mumbai at Pearl IVF. Comprehensive care for pregnancy, fertility, and women\'s health. Book an appointment now.')
+@section('meta_keywords', 'Best Gynecologist & Obstetrics Doctors in Mumbai, Best Gynecologist & Obstetrics Doctors in goregaon, Best Gynecologist & Obstetrics Doctors in Malad, Best Gynecologist & Obstetrics Doctors in kandivali, Best Gynecologist & Obstetrics Doctors in borivali, Best Gynecologist & Obstetrics Doctors in dahisar')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -23,7 +27,7 @@
         <!-- Doctor Profile -->
         <div class="row align-items-center mb-5 pb-4">
             <div class="col-lg-3 text-center mb-4 mb-lg-0">
-                <img src="https://pearlfertilityandivf.com/_images/ab3.webp" class="img-fluid rounded-circle border border-5 border-white shadow-sm" style="max-width: 250px;" alt="Dr. Pritimala Gangurde Kadam">
+                <img src="{{ asset('assets/images/Dr-Pritimala-Gangurde-Kadam.jpg') }}" class="img-fluid rounded-circle border border-5 border-white shadow-sm" style="max-width: 250px;" alt="Dr. Pritimala Gangurde Kadam" title="Dr. Pritimala Gangurde Kadam">
             </div>
             <div class="col-lg-9 ps-lg-4">
                 <h3 class="fw-bold text-dark mb-2">Dr.Pritimala Gangurde Kadam</h3>

@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Hysteroscopy - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -28,7 +30,7 @@
                 These surgeries are performed by giving local or general anesthesia. Sometimes surgery occurs without anesthesia, and the surgery is completed in only ten minutes. Before the endoscopy, the gynecologist would examine you then he will insert hysteroscope through Vagina into the Uterus. After this, co2 or some liquid will be inserted inside the Uterus so that the Uterus can be adequately seen. To remove polyps or small fibroids, the doctor may also use some more instruments. See your doctor for more questions or information.</p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/hypro-1.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Hysteroscopy">
+                <img src="{{ asset('assets/images/hypro-1.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Hysteroscopy" title="Hysteroscopy">
             </div>
         </div>
     </div>
@@ -54,7 +56,7 @@
                 Before surgery, tell the doctor about all your medicines, allergies, and health problems. Ask all your queries related to anaesthesia and sedation to your anaesthetist when he visits you.</p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/hypro-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Dangers Of Hysteroscopy">
+                <img src="{{ asset('assets/images/hypro-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Dangers Of Hysteroscopy" title="Dangers Of Hysteroscopy">
             </div>
         </div>
     </div>

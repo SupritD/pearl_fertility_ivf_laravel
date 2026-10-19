@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Cervical Cancer Screening - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -45,7 +47,7 @@
                 </p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/laproscopy.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Cervical Cancer Screening">
+                <img src="{{ asset('assets/images/laproscopy.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Cervical Cancer Screening" title="Cervical Cancer Screening">
             </div>
         </div>
     </div>

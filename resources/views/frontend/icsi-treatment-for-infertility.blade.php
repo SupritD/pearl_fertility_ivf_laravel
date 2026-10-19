@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'ICSI Treatment for Infertility in Mumbai - Pearl Fertility And IVF')
+@section('meta_description', 'ICSI is the procedure where the best possible sperm is injected artificially in the egg and at our centre we provide the best ICSI treatment for Infertility at Pearl Fertility And IVF')
+@section('meta_keywords', 'ICSI treatment in mumbai, ICSI treatment in goregaon, ICSI treatment in malad, ICSI treatment in kandivali, ICSI treatment in borivali, ICSI treatment in dahisar')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -35,7 +39,7 @@
     <div class="container py-4">
         <div class="row align-items-stretch">
             <div class="col-lg-5 mb-4 mb-lg-0">
-                <img src="{{ asset('assets/images/1-ivf.jpg') }}" class="img-fluid rounded shadow-sm w-100 h-100" style="object-fit: cover; min-height: 350px;" alt="What is ICSI">
+                <img src="{{ asset('assets/images/1-ivf.jpg') }}" class="img-fluid rounded shadow-sm w-100 h-100" style="object-fit: cover; min-height: 350px;" alt="ICSI Treatment For Infertility" title="ICSI Treatment For Infertility">
             </div>
             <div class="col-lg-7 d-flex">
                 <div class="p-5 bg-pink-subtle rounded w-100 d-flex flex-column justify-content-center shadow-sm">
@@ -63,7 +67,7 @@
                 <p class="text-muted lh-lg mb-0">As part of the process, your partner’s egg is removed from the uterus and placed in a container that protects it from any sperm that might be present.</p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('assets/images/icsi.jpg') }}" class="img-fluid rounded shadow-sm" alt="ICSI Process">
+                <img src="{{ asset('assets/images/icsi.jpg') }}" class="img-fluid rounded shadow-sm" alt="ICSI Treatment Process" title="ICSI Treatment Process">
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Embryo Freezing - Pearl Fertility and IVF')
+
 @section('content')
 
     <!-- Page Banner -->
@@ -54,8 +56,8 @@
                             abortion.</p>
                 </div>
                 <div class="col-lg-5 text-center">
-                    <img src="{{ asset('web-page-images/oocyte-freezing-img.jpg') }}"
-                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Embryo Freezing">
+                    <img src="{{ asset('assets/images/oocyte-freezing-img.jpg') }}"
+                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Embryo Freezing" title="Embryo Freezing">
                 </div>
             </div>
         </div>

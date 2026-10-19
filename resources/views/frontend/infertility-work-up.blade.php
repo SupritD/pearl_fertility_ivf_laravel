@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Infertility Work Up - Pearl Fertility and IVF')
+
 @section('content')
 
     <!-- Page Banner -->
@@ -43,8 +45,8 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://pearlfertilityandivf.com/web-page-images/infertility.jpg"
-                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Infertility Work Up">
+                    <img src="{{ asset('assets/images/infertility.jpg') }}"
+                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Infertility Work Up" title="Infertility Work Up">
                 </div>
             </div>
 
@@ -70,8 +72,8 @@
         <div class="container py-4">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="https://pearlfertilityandivf.com/web-page-images/automated-semen-analyser-img.jpg"
-                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Semen Analysis">
+                    <img src="{{ asset('assets/images/automated-semen-analyser-img.jpg') }}"
+                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Semen Analysis" title="Semen Analysis">
                 </div>
                 <div class="col-lg-7">
                     <div class="ps-lg-5">

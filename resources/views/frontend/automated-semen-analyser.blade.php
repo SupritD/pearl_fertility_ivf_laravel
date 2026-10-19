@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Automated Semen Analyser - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -38,7 +40,7 @@
                 </p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('web-page-images/automated-semen-analyser-img.jpg') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Automated Semen Analyser">
+                <img src="{{ asset('assets/images/automated-semen-analyser-img.jpg') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Automated Semen Analyser" title="Automated Semen Analyser">
             </div>
         </div>
     </div>

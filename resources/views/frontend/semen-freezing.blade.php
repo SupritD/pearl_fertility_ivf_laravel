@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Semen Freezing - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -42,7 +44,7 @@
                 <p class="text-muted lh-lg mb-0">For further queries, please write to us on <a href="mailto:pearlfertilityandivf@gmail.com" class="text-pink text-decoration-none">pearlfertilityandivf@gmail.com</a> or send enquiry on <a href="https://www.pearlfertilityandivf.com" class="text-pink text-decoration-none" target="_blank">www.pearlfertilityandivf.com</a></p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/iui-1.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Semen Freezing">
+                <img src="{{ asset('assets/images/iui-1 copy.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Semen Freezing" title="Semen Freezing">
             </div>
         </div>
     </div>

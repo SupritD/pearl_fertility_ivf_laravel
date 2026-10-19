@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Donor Sperm - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -41,7 +43,7 @@
                 <p class="text-muted lh-lg mb-0">You will be paid only your travelling and stay expenses. You don't get any payment for donation as such.</p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/laproscopy-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Donor Sperm">
+                <img src="{{ asset('assets/images/laproscopy-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Donor Sperm" title="Donor Sperm">
             </div>
         </div>
     </div>
@@ -52,7 +54,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0 text-center">
-                <img src="{{ asset('_images/donor.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Sperm Donor Tests">
+                <img src="{{ asset('assets/images/donor.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Sperm Donor Tests" title="Sperm Donor Tests">
             </div>
             <div class="col-lg-7 ps-lg-5">
                 <h3 class="fw-bold text-dark mb-4">What Tests Are Done On Sperm Donor?</h3>

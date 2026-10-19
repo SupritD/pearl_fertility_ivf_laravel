@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Laparoscopy - Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -27,7 +29,7 @@
                 <p class="text-muted lh-lg mb-0">It is also called as key hole surgery. There is a thin fiber-optic tube connected with a laparoscope light and camera. It helps your doctor see the abdominal organs and treat the problem.</p>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('_images/laproscopy.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Laparoscopy">
+                <img src="{{ asset('assets/images/laproscopy.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Laparoscopy" title="Laparoscopy">
             </div>
         </div>
     </div>
@@ -38,7 +40,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0 text-center">
-                <img src="{{ asset('_images/laproscopy-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="When Is Laparoscopic Surgery Performed">
+                <img src="{{ asset('assets/images/laproscopy-2.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="When Is Laparoscopic Surgery Performed" title="When Is Laparoscopic Surgery Performed">
             </div>
             <div class="col-lg-7 ps-lg-5">
                 <h3 class="fw-bold text-dark mb-4">When Is Laparoscopic Surgery Performed?</h3>

@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Oocyte Freezing- Pearl Fertility and IVF')
+
 @section('content')
 
 <!-- Page Banner -->
@@ -37,7 +39,7 @@
                 </ul>
             </div>
             <div class="col-lg-5 text-center">
-                <img src="{{ asset('web-page-images/oocyte-freezing-img.jpg') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Oocyte Freezing">
+                <img src="{{ asset('assets/images/oocyte.png') }}" class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Oocyte Freezing" title="Oocyte Freezing">
             </div>
         </div>
     </div>

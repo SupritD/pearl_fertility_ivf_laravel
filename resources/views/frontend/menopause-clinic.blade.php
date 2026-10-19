@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Menopause Clinic - Pearl Fertility and IVF')
+
 @section('content')
 
     <!-- Page Banner -->
@@ -40,8 +42,8 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://pearlfertilityandivf.com/web-page-images/menoapause-img.jpeg" class="img-fluid w-100"
-                        style="object-fit: cover;" alt="Menopause Clinic">
+                    <img src="{{ asset('assets/images/menoapause-img.jpeg') }}" class="img-fluid w-100"
+                        style="object-fit: cover;" alt="Menopause Clinic" title="Menopause Clinic">
                 </div>
             </div>
 

@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Contraception Counseling - Pearl Fertility and IVF')
+
 @section('content')
 
     <!-- Page Banner -->
@@ -45,8 +47,8 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://pearlfertilityandivf.com/web-page-images/contraception-counseling-img.jpg"
-                        class="img-fluid w-100" style="object-fit: cover;" alt="Contraception Counseling">
+                    <img src="{{ asset('assets/images/contraception-counseling-img.jpg') }}"
+                        class="img-fluid w-100" style="object-fit: cover;" alt="Contraception Counseling" title="Contraception Counseling">
                 </div>
             </div>
 

@@ -38,8 +38,8 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://pearlfertilityandivf.com/images/fertility-eveluation.jpg" class="img-fluid w-100"
-                        style="object-fit: cover;" alt="IVF Cost Consultation">
+                    <img src="{{ asset('assets/images/fertility-eveluation.jpg') }}" class="img-fluid w-100"
+                        style="object-fit: cover;" alt="IVF Cost Consultation" title="IVF Cost Consultation">
                 </div>
             </div>
         </div>

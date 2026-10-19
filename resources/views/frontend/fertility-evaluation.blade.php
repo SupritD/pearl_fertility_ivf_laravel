@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', 'Fertility Evaluation - Pearl Fertility and IVF')
+
 @section('content')
 
     <!-- Page Banner -->
@@ -52,8 +54,8 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://pearlfertilityandivf.com/images/fertility-eveluation.jpg" class="img-fluid w-100"
-                        style="object-fit: cover;" alt="Fertility Evaluation">
+                    <img src="{{ asset('assets/images/fertility-eveluation.jpg') }}" class="img-fluid w-100"
+                        style="object-fit: cover;" alt="Fertility Evaluation" title="Fertility Evaluation">
                 </div>
             </div>
 

@@ -33,6 +33,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255',
             'content' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'image_alt' => 'nullable|string|max:255',
@@ -48,9 +49,28 @@ class BlogController extends Controller
         if (isset($data['content'])) {
             $data['content'] = clean($data['content']);
         }
-        $data['slug'] = Str::slug($request->title);
+
+        $baseSlug = $request->filled('slug') ? Str::slug($request->slug) : Str::slug($request->title);
+        if (empty($baseSlug)) {
+            $baseSlug = Str::slug($request->title);
+        }
+        if (empty($baseSlug)) {
+            $baseSlug = 'blog-' . time();
+        }
+        $slug = $baseSlug;
+        $count = 1;
+        while (Blog::where('slug', $slug)->exists()) {
+            $slug = "{$baseSlug}-{$count}";
+            $count++;
+        }
+        $data['slug'] = $slug;
+
         $data['is_published'] = $request->has('is_published');
         $data['created_by'] = auth()->id();
+
+        if (empty($data['meta_title']) && !empty($data['title'])) {
+            $data['meta_title'] = 'Pearl Fertility and IVF | ' . trim($data['title']);
+        }
 
         if ($data['is_published'] && !$request->filled('published_at')) {
             $data['published_at'] = now();
@@ -90,6 +110,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255',
             'content' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'image_alt' => 'nullable|string|max:255',
@@ -105,8 +126,27 @@ class BlogController extends Controller
         if (isset($data['content'])) {
             $data['content'] = clean($data['content']);
         }
-        $data['slug'] = Str::slug($request->title);
+
+        $baseSlug = $request->filled('slug') ? Str::slug($request->slug) : Str::slug($request->title);
+        if (empty($baseSlug)) {
+            $baseSlug = Str::slug($request->title);
+        }
+        if (empty($baseSlug)) {
+            $baseSlug = 'blog-' . $blog->id;
+        }
+        $slug = $baseSlug;
+        $count = 1;
+        while (Blog::where('slug', $slug)->where('id', '!=', $blog->id)->exists()) {
+            $slug = "{$baseSlug}-{$count}";
+            $count++;
+        }
+        $data['slug'] = $slug;
+
         $data['is_published'] = $request->has('is_published');
+
+        if (empty($data['meta_title']) && !empty($data['title'])) {
+            $data['meta_title'] = 'Pearl Fertility and IVF | ' . trim($data['title']);
+        }
 
         if ($data['is_published'] && !$blog->published_at) {
             $data['published_at'] = now();

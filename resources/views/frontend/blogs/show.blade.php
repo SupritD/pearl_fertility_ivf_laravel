@@ -1,5 +1,12 @@
 @extends('frontend.layouts.master')
 
+@section('meta_title', $blog->meta_title ?: 'Pearl Fertility and IVF | ' . $blog->title)
+@section('meta_description', $blog->meta_description ?? Str::limit(strip_tags($blog->content), 160))
+@section('meta_keywords', $blog->meta_keywords ?? '')
+@if($blog->image)
+@section('og_image', asset('storage/' . $blog->image))
+@endif
+
 @section('content')
 <div class="container py-5">
     <div class="row justify-content-center">

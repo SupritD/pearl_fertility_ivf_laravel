@@ -96,6 +96,33 @@ This file defines the exact styling, color schemes, HTML tags, and rules used wh
 
 ---
 
+## 🔍 SEO Meta Title & Slug Auto-Generation Rules
+
+### 1. Meta Title Auto-Generation
+When creating or updating blogs in the Admin panel:
+- **Meta Title Pattern:** `Pearl Fertility and IVF | {Blog Title}`
+- **Example:**
+  - **Blog Title:** `Can a Lady Gynecologist Help With Infertility and IVF Treatment?`
+  - **Auto-Generated Meta Title:** `Pearl Fertility and IVF | Can a Lady Gynecologist Help With Infertility and IVF Treatment?`
+- **Behavior in Admin:**
+  - In `Create Blog` and `Edit Blog`, typing or modifying the Title automatically populates the `Meta Title` field in real-time.
+  - A dedicated **"Auto Generate"** button is also available to re-sync at any time.
+  - If `Meta Title` is left blank on save/update, the backend automatically generates this format.
+
+### 2. URL Slug Auto-Generation
+- **Slug Pattern:** `kebab-case` string generated directly from `{Blog Title}`.
+- **Example:**
+  - **Blog Title:** `Can a Lady Gynecologist Help With Infertility and IVF Treatment?`
+  - **Auto-Generated Slug:** `can-a-lady-gynecologist-help-with-infertility-and-ivf-treatment`
+  - **Full Frontend URL:** `https://pearlfertilityandivf.com/blogs/can-a-lady-gynecologist-help-with-infertility-and-ivf-treatment`
+- **Behavior in Admin:**
+  - In `Create Blog` and `Edit Blog`, typing or modifying the Title automatically generates the URL slug in real-time.
+  - An editable input with the `/blogs/` URL prefix addon allows custom slugs.
+  - A dedicated **"Auto Generate"** button allows re-generating the slug from Title at any time.
+  - Backend controller handles uniqueness checks and automatically appends counter suffixes (`-1`, `-2`) in case of collisions.
+
+---
+
 ## 🔒 Content & Output Rules
 
 1. **Strict Content Fidelity:**

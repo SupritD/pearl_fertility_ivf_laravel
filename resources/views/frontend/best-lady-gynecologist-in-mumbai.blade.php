@@ -138,46 +138,463 @@
 </section>
 
 <!-- What is Gynecology Section -->
-<section class="py-5 bg-white pt-2 mb-4">
-    <div class="container pb-4">
+<section class="py-5 bg-white">
+    <div class="container py-4">
+        <!-- Section Header -->
+        <div class="text-center mb-0">
+            <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Information</h6>
+            <h2 class="fw-bold text-dark mb-3">What is Gynecology?</h2>
+            <div class="title-underline mx-auto mb-4"></div>
+            <p class="text-muted lh-lg mx-auto" style="max-width: 900px; font-size: 1.05rem;">
+                A gynecologist and an obstetrician almost seem to be twins. Women’s reproductive systems are the focus of gynaecology. Unlike obstetrics, which treats pregnant women and their complications, gynaecology treats females who are not pregnant. Gynecology focuses mainly on treating hormonal, urinary tract, uterine, and vaginal ailments in non-pregnant women. It depends on the individual’s condition whether they need surgery.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Meet Our Specialist Section -->
+<section class="py-5 bg-pink-subtle border-top">
+    <div class="container py-4">
+        <!-- Doctor Photo in Center -->
+        <div class="text-center mb-4">
+            <img src="{{ asset('assets/images/dr-pritimala-gangurde-kadam (2).jpg') }}" class="img-fluid rounded-circle border border-5 border-white shadow" style="max-width: 220px; width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: top;" alt="Dr. Pritimala Gangurde Kadam - Best Lady Gynecologist in Mumbai" title="Dr. Pritimala Gangurde Kadam - Best Lady Gynecologist in Mumbai">
+            <h2 class="fw-bold text-dark mt-4 mb-2">Meet Our Specialist: Dr. Pritimala Gangurde Kadam</h2>
+            <p class="text-pink fw-semibold text-uppercase mb-3" style="letter-spacing: 1px; font-size: 0.95rem;">Gynecologist &amp; Infertility Specialist</p>
+            <div class="title-underline mx-auto mb-4"></div>
+        </div>
+
+        <!-- Introductory Paragraphs -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <p class="text-muted lh-lg mb-3" style="font-size: 1.05rem;">
+                    Dr. Pritimala Gangurde Kadam is a gynecologist &amp; infertility specialist at Pearl Fertility &amp; IVF in Mumbai, with 15 years of professional experience. Her qualifications include MBBS &amp; DNB in Obstetrics &amp; Gynaecology, along with additional training in reproductive medicine &amp; IVF.
+                </p>
+                <p class="text-muted lh-lg mb-0" style="font-size: 1.05rem;">
+                    She provides guidance on women's reproductive health, infertility evaluation &amp; fertility treatment options based on each patient's individual needs &amp; medical history.
+                </p>
+            </div>
+        </div>
+
+        <!-- Qualifications & Experience Grid -->
+        <div class="row g-4 mb-4">
+            <!-- Qualifications & Specialist Training -->
+            <div class="col-lg-6">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-pink-subtle rounded-circle p-2 me-3 text-pink d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                            <i class="bi bi-mortarboard-fill fs-4"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-0">Qualifications &amp; Specialist Training</h4>
+                    </div>
+                    <p class="text-muted mb-3">Dr. Pritimala Gangurde Kadam's qualifications &amp; additional training include:</p>
+                    <ul class="list-unstyled mb-0 text-muted lh-lg">
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-pink me-2 mt-1"></i>
+                            <span>MBBS</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-pink me-2 mt-1"></i>
+                            <span>DNB in Obstetrics &amp; Gynaecology</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-pink me-2 mt-1"></i>
+                            <span>Master's training in Reproductive Medicine &amp; IVF, London</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-pink me-2 mt-1"></i>
+                            <span>Postgraduate training in Reproductive Medicine (ACOG), as listed in her existing profile</span>
+                        </li>
+                        <li class="mb-0 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-pink me-2 mt-1"></i>
+                            <span>Diploma in IVF &amp; Reproductive Medicine, Germany</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professional Experience -->
+            <div class="col-lg-6">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-pink-subtle rounded-circle p-2 me-3 text-pink d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                            <i class="bi bi-briefcase-fill fs-4"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-0">Professional Experience</h4>
+                    </div>
+                    <p class="text-muted lh-lg mb-3">
+                        Lady gynaecologist in Mumbai with 15 years of professional experience, Dr. Pritimala Gangurde Kadam has a background in gynecology &amp; reproductive medicine. Her professional profile includes experience in the IVF department at Lilavati Hospital &amp; Research Centre, Bandra West, Mumbai.
+                    </p>
+                    <p class="text-muted lh-lg mb-3">
+                        Her clinical interests include infertility evaluation, <a href="{{ url('/ivf-cost-in-mumbai') }}" class="text-pink fw-bold text-decoration-none">IVF</a>, IUI, PCOS-related reproductive concerns &amp; other aspects of women's reproductive health.
+                    </p>
+                    <p class="text-muted lh-lg mb-0">
+                        Patients seeking a lady gynecologist in Mumbai can learn about her qualifications, professional experience &amp; the fertility services available at Pearl Fertility &amp; IVF before deciding on their care.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Areas of Clinical Interest -->
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm rounded-3 p-4 bg-white">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-pink-subtle rounded-circle p-2 me-3 text-pink d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                            <i class="bi bi-heart-pulse-fill fs-4"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-0">Areas of Clinical Interest</h4>
+                    </div>
+                    <p class="text-muted mb-4">Depending on the patient's diagnosis &amp; treatment needs, gynecological &amp; fertility care may include:</p>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 rounded-2 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check2-circle text-pink me-2"></i>Infertility evaluation</h6>
+                                <p class="text-muted small mb-0 ps-4">Investigating potential factors affecting conception.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 rounded-2 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check2-circle text-pink me-2"></i>IVF treatment</h6>
+                                <p class="text-muted small mb-0 ps-4">Understanding when in vitro fertilization may be an appropriate option.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 rounded-2 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check2-circle text-pink me-2"></i>IUI treatment</h6>
+                                <p class="text-muted small mb-0 ps-4">Exploring intrauterine insemination for suitable patients.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 rounded-2 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check2-circle text-pink me-2"></i>PCOS &amp; reproductive health</h6>
+                                <p class="text-muted small mb-0 ps-4">Assessing menstrual irregularities, ovulation concerns &amp; associated fertility issues.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 rounded-2 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check2-circle text-pink me-2"></i>Reproductive medicine</h6>
+                                <p class="text-muted small mb-0 ps-4">Reviewing fertility investigations &amp; discussing suitable treatment pathways.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 rounded-2 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-check2-circle text-pink me-2"></i>Fertility preservation</h6>
+                                <p class="text-muted small mb-0 ps-4">Understanding available options for preserving reproductive potential when medically appropriate.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 rounded-2 bg-pink-subtle text-center">
+                        <p class="text-muted mb-0 fst-italic">
+                            <i class="bi bi-info-circle text-pink me-1"></i> The recommended treatment depends on the patient's age, diagnosis, test results, medical history &amp; personal preferences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointment Call To Action -->
+        <div class="text-center mt-5">
+            <a href="{{ route('frontend.book-appointment') }}" class="btn btn-pink rounded-pill px-5 py-3 fw-bold shadow-sm" style="font-size: 1rem;">
+                BOOK APPOINTMENT WITH DR. PRITIMALA GANGURDE KADAM <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- When should you consult a gynecologist Section -->
+<section class="py-5 bg-white border-top">
+    <div class="container py-4">
+        <!-- Consultation & Guidance Card -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 bg-pink-subtle mb-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-5 text-center">
+                    <img src="{{ asset('assets/images/infertility.jpg') }}" class="img-fluid rounded-4 shadow-sm w-100" style="max-height: 320px; object-fit: cover;" alt="Gynecologist Consultation at Pearl Fertility &amp; IVF" title="Gynecologist Consultation">
+                </div>
+                <div class="col-lg-7 ps-lg-4">
+                    <h3 class="fw-bold text-dark mb-3">When should you consult a gynecologist?</h3>
+                    <p class="text-muted lh-lg mb-3" style="font-size: 1rem;">
+                        Gynecologists specialize in female reproductive health. Including breasts, ovaries, uteruses, and fallopian tubes, they can treat all female reproductive health issues.
+                    </p>
+                    <p class="text-muted lh-lg mb-0" style="font-size: 1rem;">
+                        Best lady Gynecologist in Mumbai recommend annual screenings. Gynecologists who are reputable can provide you with the best treatment. When suffering from any of the following gynaecological issues, Pearl Fertility should be consulted:
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- All 13 Issues - 2 Column Clean Grid with Exact Original Text -->
+        <div class="row g-3 mb-5">
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Problems related to bisexuality or same-sex relationships</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Intense cramps or abnormal or irregular cycles are symptoms of menstrual problems.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Infections caused by sexual contact</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Termination, sterilization, and contraception of pregnancy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">An ovarian disorder caused by polycystic ovaries</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Reproductive system cancer, cervix cancer, or breast cancer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Continence problems with urine</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Anomalies arising from birth</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Dysfunction in sexuality</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Issues related to menopause</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Endometriosis is a condition mainly affecting the reproductive system</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">Breast-related problems such as fibroids, vaginal ulcers, vulval cysts, and ovarian cysts</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="p-3 rounded-3 bg-light h-100 border-start border-3 border-pink" style="border-color: #e83e8c !important;">
+                    <div class="d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-pink me-2 mt-1 fs-6"></i>
+                        <span class="text-muted">A lack of support for the pelvic organs due to ligaments, tissues, and muscles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Closing Note - Exact Original Text -->
+        <div class="p-4 rounded-3 bg-white border border-pink shadow-sm text-center" style="border-color: rgba(232, 62, 140, 0.3) !important;">
+            <p class="text-dark fw-medium mb-0" style="font-size: 1.05rem;">
+                <i class="bi bi-chat-heart text-pink me-2 fs-5"></i>
+                It’s easy to ask questions about sexuality, menstruation, and other stuff once they feel comfortable with the gynaecologist.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Frequently Asked Questions (FAQs) Section -->
+<section class="py-5 bg-white border-top">
+    <div class="container py-4">
         <div class="text-center mb-5">
-            <h3 class="fw-bold text-dark mb-3">What is Gynecology?</h3>
+            <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Got Questions?</h6>
+            <h2 class="fw-bold text-dark mb-3">Frequently Asked Questions (FAQs)</h2>
             <div class="title-underline mx-auto"></div>
         </div>
-        
-        <p class="text-muted lh-lg mb-5 text-center px-lg-5" style="font-size: 1.05rem;">
-            A gynecologist and an obstetrician almost seem to be twins. Women’s reproductive systems are the focus of gynaecology. Unlike obstetrics, which treats pregnant women and their complications, anaesthesiology treats females who are not pregnant. Gynecology focuses mainly on treating hormonal, urinary tract, uterine, and vaginal ailments in non-pregnant women. It depends on the individual’s condition whether they need surgery.
-        </p>
 
-        <!-- Accordion -->
-        <div class="accordion custom-accordion" id="gynecologyAccordion">
-            <div class="accordion-item border-0 border-bottom rounded-0 mb-3">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button fw-bold text-dark px-0 py-3 shadow-none bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        When should you consult a gynecologist?
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#gynecologyAccordion">
-                    <div class="accordion-body px-0 pt-3 pb-4 text-muted lh-lg">
-                        <p class="mb-4">Gynecologists specialize in female reproductive health. Including breasts, ovaries, uteruses, and fallopian tubes, they can treat all female reproductive health issues.</p>
-                        <p class="mb-4">Best lady Gynecologist in Mumbai recommend annual screenings. Gynecologists who are reputable can provide you with the best treatment. When suffering from any of the following gynaecological issues, Pearl Fertility should be consulted:</p>
-                        <ul class="mb-4 ps-4">
-                            <li class="mb-2">Problems related to bisexuality or same-sex relationships</li>
-                            <li class="mb-2">Intense cramps or abnormal or irregular cycles are symptoms of menstrual problems.</li>
-                            <li class="mb-2">Infections caused by sexual contact</li>
-                            <li class="mb-2">Termination, sterilization, and contraception of pregnancy</li>
-                            <li class="mb-2">An ovarian disorder caused by polycystic ovaries</li>
-                            <li class="mb-2">Reproductive system cancer, cervix cancer, or breast cancer</li>
-                            <li class="mb-2">Continence problems with urine</li>
-                            <li class="mb-2">Anomalies arising from birth</li>
-                            <li class="mb-2">Dysfunction in sexuality</li>
-                            <li class="mb-2">Issues related to menopause</li>
-                            <li class="mb-2">Endometriosis is a condition mainly affecting the reproductive system</li>
-                            <li class="mb-2">Breast-related problems such as fibroids, vaginal ulcers, vulval cysts, and ovarian cysts</li>
-                            <li class="mb-2">A lack of support for the pelvic organs due to ligaments, tissues, and muscles</li>
-                        </ul>
-                        <p class="mb-0">It’s easy to ask questions about sexuality, menstruation, and other stuff once they feel comfortable with the gynaecologist.</p>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion custom-faq-accordion" id="faqAccordion">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading1">
+                            <button class="accordion-button fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                1. Who is the best lady gynecologist in Mumbai?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Choosing the best lady gynecologist in Mumbai depends on the doctor's qualifications, clinical experience &amp; communication style. Dr. Pritimala Gangurde Kadam at Pearl Fertility &amp; IVF has over 15 years of experience in gynecology &amp; fertility care.
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading2">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                2. How can I find an experienced lady gynecologist in Mumbai?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Look for a qualified gynecologist with relevant clinical experience, appropriate medical registration &amp; expertise in your specific concern. You can also consider the clinic's location, available services &amp; how comfortably the doctor addresses your questions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading3">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                3. What conditions does a lady gynecologist treat?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                A lady gynecologist can evaluate &amp; manage various women's health concerns, including irregular periods, PCOS, menstrual pain, hormonal concerns, reproductive health issues &amp; menopause-related symptoms.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading4">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                4. Can Dr. Pritimala Gangurde Kadam help with infertility &amp; IVF treatment?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Dr. Pritimala Gangurde Kadam is an experienced gynecologist &amp; fertility expert. At Pearl Fertility &amp; IVF, patients can explore infertility evaluation &amp; assisted reproductive treatment options, including IVF.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading5">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                5. Does a lady gynecologist in Mumbai provide PCOS treatment?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Yes. Gynecologists can assess PCOS-related concerns, such as irregular menstrual cycles, hormonal changes &amp; ovulation difficulties. Treatment may include lifestyle guidance, medication or fertility support, depending on the patient's symptoms &amp; reproductive goals.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading6">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                6. When should I visit a lady gynecologist?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Consider consulting a gynecologist if you experience persistent irregular periods, unusually heavy menstrual bleeding, pelvic pain, unusual vaginal discharge or difficulty conceiving. Severe pain or heavy bleeding accompanied by dizziness requires urgent medical assessment.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading7">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                7. Can I consult a lady gynecologist for pregnancy planning?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Yes. A gynecologist can provide preconception guidance, review relevant medical history, discuss recommended investigations &amp; advise on steps that may support a healthy pregnancy. Women with known reproductive health concerns may benefit from an earlier consultation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading8">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                                8. What is the difference between a gynecologist &amp; a fertility specialist?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                A gynecologist focuses on women's reproductive &amp; reproductive-organ health, including menstrual &amp; hormonal concerns. A fertility specialist focuses specifically on evaluating &amp; managing difficulties with conception. Dr Pritimala Gangurde Kadam at Pearl fertility &amp; IVF expertise in both areas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 9 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading9">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+                                9. Does Pearl Fertility &amp; IVF offer fertility treatment in Mumbai?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Pearl Fertility &amp; IVF provides fertility-related services in Mumbai. Patients can explore the clinic's available treatment options, including IVF &amp; IUI, &amp; discuss their suitability with the treating medical team.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 10 -->
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h2 class="accordion-header" id="faqHeading10">
+                            <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse10" aria-expanded="false" aria-controls="faqCollapse10">
+                                10. Where is Pearl Fertility &amp; IVF located in Mumbai?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse10" class="accordion-collapse collapse" aria-labelledby="faqHeading10" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
+                                Pearl Fertility &amp; IVF is located in Kandivali West, Mumbai. Patients looking for a lady gynecologist in Mumbai can review the clinic's website for its current address, directions &amp; service information.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -224,6 +641,9 @@
 .text-pink {
     color: #e83e8c !important;
 }
+.border-pink {
+    border-color: #e83e8c !important;
+}
 .btn-pink {
     background-color: #e83e8c;
     color: white;
@@ -255,6 +675,22 @@
     content: "\F286"; /* bi-chevron-up */
     color: #007bff;
     transform: none;
+}
+/* FAQ Accordion Styling */
+.custom-faq-accordion .accordion-button:not(.collapsed) {
+    color: #e83e8c !important;
+    background-color: #fdf5f8 !important;
+}
+.custom-faq-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(232, 62, 140, 0.25);
+}
+.hover-elevate {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hover-elevate:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1.25rem rgba(232, 62, 140, 0.12) !important;
 }
 </style>
 @endsection

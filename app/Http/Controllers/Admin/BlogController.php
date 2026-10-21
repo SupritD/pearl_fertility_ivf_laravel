@@ -91,7 +91,7 @@ class BlogController extends Controller
             $blog->tags()->sync($request->tags);
         }
 
-        return redirect()->route('admin.blogs.index')->with('status', 'Blog created successfully.');
+        return redirect()->route('admin.blogs.index')->with('status', 'Blog "' . $blog->title . '" created successfully.');
     }
 
     public function show(Blog $blog)
@@ -174,16 +174,17 @@ class BlogController extends Controller
             $blog->tags()->detach();
         }
 
-        return redirect()->route('admin.blogs.index')->with('status', 'Blog updated successfully.');
+        return redirect()->route('admin.blogs.index')->with('status', 'Blog "' . $blog->title . '" updated successfully.');
     }
 
     public function destroy(Blog $blog)
     {
+        $title = $blog->title;
         if ($blog->image)
             Storage::disk('public')->delete($blog->image);
         $blog->categories()->detach();
         $blog->tags()->detach();
         $blog->delete();
-        return redirect()->route('admin.blogs.index')->with('status', 'Blog deleted successfully.');
+        return redirect()->route('admin.blogs.index')->with('status', 'Blog "' . $title . '" deleted successfully.');
     }
 }

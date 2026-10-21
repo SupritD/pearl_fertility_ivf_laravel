@@ -30,13 +30,13 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255|unique:categories,name',
         ]);
 
-        Category::create([
+        $category = Category::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
             'created_by' => auth()->id(),
         ]);
 
-        return redirect()->route('admin.categories.index')->with('status', 'Category created successfully.');
+        return redirect()->route('admin.categories.index')->with('status', 'Category "' . $category->name . '" created successfully.');
     }
 
     public function show(Category $category)
@@ -60,12 +60,13 @@ class CategoryController extends Controller
             'slug' => Str::slug($request->name),
         ]);
 
-        return redirect()->route('admin.categories.index')->with('status', 'Category updated successfully.');
+        return redirect()->route('admin.categories.index')->with('status', 'Category "' . $category->name . '" updated successfully.');
     }
 
     public function destroy(Category $category)
     {
+        $name = $category->name;
         $category->delete();
-        return redirect()->route('admin.categories.index')->with('status', 'Category deleted successfully.');
+        return redirect()->route('admin.categories.index')->with('status', 'Category "' . $name . '" deleted successfully.');
     }
 }

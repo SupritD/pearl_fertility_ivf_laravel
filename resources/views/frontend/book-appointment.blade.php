@@ -20,7 +20,10 @@
                 <p class="text-muted lh-lg mb-4">Please fill out the form below to request an appointment. Our team will get back to you shortly.</p>
                 
                 @if(session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i>{{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endif
 
                 <form action="{{ route('frontend.book-appointment.store') }}" method="POST" class="contact-form">

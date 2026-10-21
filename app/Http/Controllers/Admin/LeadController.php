@@ -93,7 +93,7 @@ class LeadController extends Controller
 
         $lead->update(['status' => $request->status]);
 
-        return redirect()->route('admin.leads.index')->with('status', 'Lead updated successfully.');
+        return redirect()->route('admin.leads.index')->with('status', 'Lead for "' . $lead->name . '" updated to ' . $request->status . ' successfully.');
     }
 
     /**
@@ -101,7 +101,8 @@ class LeadController extends Controller
      */
     public function destroy(Lead $lead)
     {
+        $name = $lead->name;
         $lead->delete();
-        return redirect()->route('admin.leads.index')->with('status', 'Lead deleted successfully.');
+        return redirect()->route('admin.leads.index')->with('status', 'Lead for "' . $name . '" deleted successfully.');
     }
 }

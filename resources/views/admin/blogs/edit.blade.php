@@ -113,24 +113,83 @@
                 </div>
 
                 <div class="card mb-3">
-                    <div class="card-header">Featured Image</div>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Featured Image</span>
+                        <span class="badge bg-light text-muted border">Comparison</span>
+                    </div>
                     <div class="card-body">
-                        @if($blog->image)
-                            <div class="mb-3">
-                                <img src="{{ asset('storage/'.$blog->image) }}" class="img-fluid" alt="{{ $blog->image_alt }}">
-                            </div>
-                        @endif
+                        <!-- Image Comparison Area -->
                         <div class="mb-3">
-                            <label class="form-label">Upload New Image</label>
-                            <input type="file" name="image" class="form-control" accept="image/*">
+                            <label class="form-label fw-bold mb-2">
+                                <i class="bi bi-images me-1 text-primary"></i> Image Preview & Comparison
+                            </label>
+                            <div class="row g-2">
+                                <!-- Previous / Current Active Image -->
+                                <div class="col-6">
+                                    <div class="border rounded p-2 bg-light text-center h-100">
+                                        <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                            <span class="badge bg-secondary"><i class="bi bi-clock-history me-1"></i> Current Image</span>
+                                            <span class="badge bg-dark-subtle text-dark small">Active</span>
+                                        </div>
+                                        <div class="bg-white rounded border p-2 d-flex align-items-center justify-content-center" style="min-height: 160px; max-height: 200px;">
+                                            @if($blog->image)
+                                                <img src="{{ asset('storage/'.$blog->image) }}" id="current_image_display" class="img-fluid rounded" style="max-height: 180px; object-fit: contain;" alt="{{ $blog->image_alt }}">
+                                            @else
+                                                <div class="text-muted small py-4">
+                                                    <i class="bi bi-image fs-1 d-block text-secondary opacity-50 mb-1"></i>
+                                                    No current image
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="mt-2 small text-muted text-truncate" title="{{ $blog->image ? basename($blog->image) : 'No file' }}">
+                                            {{ $blog->image ? basename($blog->image) : 'None' }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- New Image Selected (Comparison) -->
+                                <div class="col-6">
+                                    <div class="border rounded p-2 bg-light text-center h-100 position-relative" id="new_image_card">
+                                        <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                            <span class="badge bg-success" id="new_badge"><i class="bi bi-sparkles me-1"></i> New Image</span>
+                                            <button type="button" id="btn_cancel_new_image" class="btn btn-sm btn-outline-danger py-0 px-2 d-none" title="Cancel new image selection">
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
+                                        </div>
+                                        <div class="bg-white rounded border p-2 d-flex align-items-center justify-content-center" style="min-height: 160px; max-height: 200px;">
+                                            <!-- Placeholder before selection -->
+                                            <div id="new_image_placeholder" class="text-muted small py-3 px-2">
+                                                <i class="bi bi-cloud-arrow-up fs-2 d-block text-primary opacity-75 mb-1"></i>
+                                                <span>Choose a new file below to preview & compare</span>
+                                            </div>
+                                            <!-- Preview element once new file chosen -->
+                                            <img id="new_image_preview" src="#" alt="New Preview" class="img-fluid rounded d-none" style="max-height: 180px; object-fit: contain;">
+                                        </div>
+                                        <div class="mt-2 small text-success fw-semibold text-truncate d-none" id="new_image_details"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            @if($blog->image)
+                                <div class="alert alert-info py-2 px-3 mt-2 mb-0 small">
+                                    <i class="bi bi-info-circle me-1"></i>
+                                    Uploading a new image will replace the current active image when you update.
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="blog_image_input">Upload New Image</label>
+                            <input type="file" name="image" id="blog_image_input" class="form-control @error('image') is-invalid @enderror" accept="image/*">
+                            @error('image')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                            <small class="text-muted">Supported: JPG, PNG, WEBP (Max: 2MB). Leave empty to keep current image.</small>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Image Alt</label>
-                            <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt', $blog->image_alt) }}">
+                            <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt', $blog->image_alt) }}" placeholder="Image description for SEO">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Image Caption</label>
-                            <input type="text" name="image_caption" class="form-control" value="{{ old('image_caption', $blog->image_caption) }}">
+                            <input type="text" name="image_caption" class="form-control" value="{{ old('image_caption', $blog->image_caption) }}" placeholder="Optional image caption">
                         </div>
                     </div>
                 </div>
@@ -256,6 +315,48 @@
             e.preventDefault();
             isMetaTitleManuallyEdited = false;
             generateMetaTitle();
+        });
+
+        // Image Comparison Live Preview
+        const $imageInput = $('#blog_image_input');
+        const $newImagePreview = $('#new_image_preview');
+        const $newImagePlaceholder = $('#new_image_placeholder');
+        const $newImageDetails = $('#new_image_details');
+        const $cancelBtn = $('#btn_cancel_new_image');
+
+        function resetNewImagePreview() {
+            $imageInput.val('');
+            $newImagePreview.attr('src', '#').addClass('d-none');
+            $newImagePlaceholder.removeClass('d-none');
+            $cancelBtn.addClass('d-none');
+            $newImageDetails.empty().addClass('d-none');
+        }
+
+        $imageInput.on('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select a valid image file (JPG, PNG, WEBP).');
+                    resetNewImagePreview();
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    $newImagePreview.attr('src', evt.target.result).removeClass('d-none');
+                    $newImagePlaceholder.addClass('d-none');
+                    $cancelBtn.removeClass('d-none');
+                    const sizeInKB = (file.size / 1024).toFixed(1);
+                    $newImageDetails.html('<strong>' + file.name + '</strong> (' + sizeInKB + ' KB)').removeClass('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                resetNewImagePreview();
+            }
+        });
+
+        $cancelBtn.on('click', function(e) {
+            e.preventDefault();
+            resetNewImagePreview();
         });
     });
 </script>

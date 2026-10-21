@@ -78,7 +78,7 @@ class AppointmentController extends Controller
 
         $appointment->update(['status' => $request->status]);
 
-        return redirect()->route('admin.appointments.index')->with('status', 'Appointment updated successfully.');
+        return redirect()->route('admin.appointments.index')->with('status', 'Appointment for "' . $appointment->first_name . ' ' . $appointment->last_name . '" updated to ' . $request->status . ' successfully.');
     }
 
     /**
@@ -86,7 +86,8 @@ class AppointmentController extends Controller
      */
     public function destroy(Appointment $appointment)
     {
+        $name = $appointment->first_name . ' ' . $appointment->last_name;
         $appointment->delete();
-        return redirect()->route('admin.appointments.index')->with('status', 'Appointment deleted successfully.');
+        return redirect()->route('admin.appointments.index')->with('status', 'Appointment for "' . $name . '" deleted successfully.');
     }
 }

@@ -154,5 +154,76 @@
             </div>
         @endguest
     </div>
+
+    @stack('scripts')
+
+    <!-- Global Alert Auto-Dismiss (5 seconds) and Close Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                // Ensure alert has alert-dismissible and a close button if not already present
+                if (!alert.querySelector('.btn-close')) {
+                    alert.classList.add('alert-dismissible', 'fade', 'show');
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'btn-close';
+                    btn.setAttribute('data-bs-dismiss', 'alert');
+                    btn.setAttribute('aria-label', 'Close');
+                    alert.appendChild(btn);
+                }
+
+                let dismissTimeout = null;
+                const delay = 5000; // 5 seconds
+
+                function startTimer() {
+                    dismissTimeout = setTimeout(function() {
+                        if (window.bootstrap && window.bootstrap.Alert) {
+                            try {
+                                const bsAlert = window.bootstrap.Alert.getOrCreateInstance(alert);
+                                if (bsAlert) {
+                                    bsAlert.close();
+                                    return;
+                                }
+                            } catch (e) {}
+                        }
+                        alert.classList.remove('show');
+                        alert.style.transition = 'opacity 0.4s ease, margin 0.4s ease, height 0.4s ease';
+                        alert.style.opacity = '0';
+                        setTimeout(function() {
+                            alert.remove();
+                        }, 400);
+                    }, delay);
+                }
+
+                function clearTimer() {
+                    if (dismissTimeout) {
+                        clearTimeout(dismissTimeout);
+                        dismissTimeout = null;
+                    }
+                }
+
+                // Pause dismissal when hovered, resume when mouse leaves
+                alert.addEventListener('mouseenter', clearTimer);
+                alert.addEventListener('mouseleave', startTimer);
+
+                // Immediate smooth close on button click
+                const closeBtn = alert.querySelector('.btn-close');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function(e) {
+                        clearTimer();
+                        alert.classList.remove('show');
+                        alert.style.transition = 'opacity 0.3s ease';
+                        alert.style.opacity = '0';
+                        setTimeout(function() {
+                            alert.remove();
+                        }, 300);
+                    });
+                }
+
+                startTimer();
+            });
+        });
+    </script>
 </body>
 </html>

@@ -30,13 +30,13 @@ class TagController extends Controller
             'name' => 'required|string|max:255|unique:tags,name',
         ]);
 
-        Tag::create([
+        $tag = Tag::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
             'created_by' => auth()->id(),
         ]);
 
-        return redirect()->route('admin.tags.index')->with('status', 'Tag created successfully.');
+        return redirect()->route('admin.tags.index')->with('status', 'Tag "' . $tag->name . '" created successfully.');
     }
 
     public function show(Tag $tag)
@@ -60,12 +60,13 @@ class TagController extends Controller
             'slug' => Str::slug($request->name),
         ]);
 
-        return redirect()->route('admin.tags.index')->with('status', 'Tag updated successfully.');
+        return redirect()->route('admin.tags.index')->with('status', 'Tag "' . $tag->name . '" updated successfully.');
     }
 
     public function destroy(Tag $tag)
     {
+        $name = $tag->name;
         $tag->delete();
-        return redirect()->route('admin.tags.index')->with('status', 'Tag deleted successfully.');
+        return redirect()->route('admin.tags.index')->with('status', 'Tag "' . $name . '" deleted successfully.');
     }
 }

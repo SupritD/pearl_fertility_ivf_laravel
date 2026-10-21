@@ -56,9 +56,10 @@ class SliderController extends Controller
             $data['image_mobile'] = $request->file('image_mobile')->store('sliders', 'public');
         }
 
-        Slider::create($data);
+        $slider = Slider::create($data);
+        $title = $slider->heading ? '"' . $slider->heading . '"' : '#' . $slider->id;
 
-        return redirect()->route('admin.sliders.index')->with('status', 'Slider created successfully.');
+        return redirect()->route('admin.sliders.index')->with('status', 'Slider ' . $title . ' created successfully.');
     }
 
     public function show(Slider $slider)
@@ -104,17 +105,19 @@ class SliderController extends Controller
         }
 
         $slider->update($data);
+        $title = $slider->heading ? '"' . $slider->heading . '"' : '#' . $slider->id;
 
-        return redirect()->route('admin.sliders.index')->with('status', 'Slider updated successfully.');
+        return redirect()->route('admin.sliders.index')->with('status', 'Slider ' . $title . ' updated successfully.');
     }
 
     public function destroy(Slider $slider)
     {
+        $title = $slider->heading ? '"' . $slider->heading . '"' : '#' . $slider->id;
         if ($slider->image_desktop) Storage::disk('public')->delete($slider->image_desktop);
         if ($slider->image_tablet) Storage::disk('public')->delete($slider->image_tablet);
         if ($slider->image_mobile) Storage::disk('public')->delete($slider->image_mobile);
         
         $slider->delete();
-        return redirect()->route('admin.sliders.index')->with('status', 'Slider deleted successfully.');
+        return redirect()->route('admin.sliders.index')->with('status', 'Slider ' . $title . ' deleted successfully.');
     }
 }

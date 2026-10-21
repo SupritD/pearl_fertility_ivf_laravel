@@ -108,18 +108,41 @@
                 </div>
 
                 <div class="card mb-3">
-                    <div class="card-header">Featured Image</div>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Featured Image</span>
+                        <span class="badge bg-light text-muted border">Preview Available</span>
+                    </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <input type="file" name="image" class="form-control" accept="image/*">
+                            <label class="form-label" for="blog_image_input">Upload Image</label>
+                            <input type="file" name="image" id="blog_image_input" class="form-control @error('image') is-invalid @enderror" accept="image/*">
+                            @error('image')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                            <small class="text-muted">Supported formats: JPG, PNG, WEBP (Max 2MB)</small>
                         </div>
+
+                        <!-- Live Preview Box -->
+                        <div id="image_preview_box" class="mb-3 d-none">
+                            <div class="border rounded p-2 bg-light">
+                                <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                    <span class="badge bg-primary"><i class="bi bi-eye me-1"></i> Image Preview</span>
+                                    <button type="button" id="btn_clear_image" class="btn btn-sm btn-outline-danger py-0 px-2" title="Remove selected image">
+                                        <i class="bi bi-x-lg"></i> Clear
+                                    </button>
+                                </div>
+                                <div class="bg-white rounded border p-2 text-center d-flex align-items-center justify-content-center" style="min-height: 160px; max-height: 240px;">
+                                    <img id="image_preview" src="#" alt="Preview" class="img-fluid rounded" style="max-height: 220px; object-fit: contain;">
+                                </div>
+                                <div class="mt-2 text-center small text-muted text-truncate" id="image_file_details"></div>
+                            </div>
+                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">Image Alt</label>
-                            <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt') }}">
+                            <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt') }}" placeholder="Image description for SEO">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Image Caption</label>
-                            <input type="text" name="image_caption" class="form-control" value="{{ old('image_caption') }}">
+                            <input type="text" name="image_caption" class="form-control" value="{{ old('image_caption') }}" placeholder="Optional caption">
                         </div>
                     </div>
                 </div>
@@ -249,6 +272,45 @@
             e.preventDefault();
             isMetaTitleManuallyEdited = false;
             generateMetaTitle();
+        });
+
+        // Image Live Preview
+        const $imageInput = $('#blog_image_input');
+        const $previewBox = $('#image_preview_box');
+        const $previewImg = $('#image_preview');
+        const $fileDetails = $('#image_file_details');
+        const $clearBtn = $('#btn_clear_image');
+
+        $imageInput.on('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select a valid image file (JPG, PNG, WEBP).');
+                    $imageInput.val('');
+                    $previewBox.addClass('d-none');
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    $previewImg.attr('src', evt.target.result);
+                    const sizeInKB = (file.size / 1024).toFixed(1);
+                    $fileDetails.html('<strong>' + file.name + '</strong> (' + sizeInKB + ' KB)');
+                    $previewBox.removeClass('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                $previewBox.addClass('d-none');
+                $previewImg.attr('src', '#');
+                $fileDetails.empty();
+            }
+        });
+
+        $clearBtn.on('click', function(e) {
+            e.preventDefault();
+            $imageInput.val('');
+            $previewBox.addClass('d-none');
+            $previewImg.attr('src', '#');
+            $fileDetails.empty();
         });
     });
 </script>

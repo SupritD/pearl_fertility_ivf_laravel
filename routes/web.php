@@ -65,4 +65,10 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(
     Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
     Route::resource('leads', App\Http\Controllers\Admin\LeadController::class)->except(['create', 'store']);
     Route::resource('appointments', App\Http\Controllers\Admin\AppointmentController::class)->except(['create', 'store']);
+
+    // Cache clearing utility for production
+    Route::get('/clear-cache', function () {
+        \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+        return 'All caches (views, config, routes, app cache) cleared successfully! <br><br><a href="' . url('/') . '">&larr; Return to Home Page</a>';
+    })->name('clear-cache');
 });

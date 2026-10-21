@@ -41,9 +41,9 @@ class ReviewController extends Controller
             $data['image'] = $request->file('image')->store('reviews', 'public');
         }
 
-        Review::create($data);
+        $review = Review::create($data);
 
-        return redirect()->route('admin.reviews.index')->with('success', 'Review created successfully.');
+        return redirect()->route('admin.reviews.index')->with('success', 'Review for "' . $review->patient_name . '" created successfully.');
     }
 
     public function edit(Review $review)
@@ -73,16 +73,17 @@ class ReviewController extends Controller
 
         $review->update($data);
 
-        return redirect()->route('admin.reviews.index')->with('success', 'Review updated successfully.');
+        return redirect()->route('admin.reviews.index')->with('success', 'Review for "' . $review->patient_name . '" updated successfully.');
     }
 
     public function destroy(Review $review)
     {
+        $name = $review->patient_name;
         if ($review->image) {
             Storage::disk('public')->delete($review->image);
         }
         $review->delete();
 
-        return redirect()->route('admin.reviews.index')->with('success', 'Review deleted successfully.');
+        return redirect()->route('admin.reviews.index')->with('success', 'Review for "' . $name . '" deleted successfully.');
     }
 }

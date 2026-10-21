@@ -38,7 +38,10 @@
                 <div class="col-lg-6 ps-lg-5">
                     <h2 class="fw-bold mb-4">Enquiry Form</h2>
                     @if(session('success'))
-                        <div class="alert alert-success">{{ session('success') }}</div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i>{{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                     @endif
                     <form action="{{ route('frontend.contacts.store') }}" method="post" class="contact-form">
                         @csrf

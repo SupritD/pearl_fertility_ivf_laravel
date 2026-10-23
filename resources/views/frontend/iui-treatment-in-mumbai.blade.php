@@ -28,24 +28,32 @@
         <div class="container py-4">
             <div class="row align-items-center">
                 <div class="col-lg-7 pe-lg-5 mb-4 mb-lg-0">
-                    <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Overview</h6>
+                    <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">
+                        Overview</h6>
                     <h2 class="fw-bold text-dark mb-3">What Is IUI Treatment?</h2>
                     <div class="title-underline mb-4"></div>
                     <p class="text-muted lh-lg mb-3" style="font-size: 1.05rem;">
-                        Intrauterine insemination (IUI) is an assisted fertility treatment that places processed semen directly inside the uterus around ovulation period. This reduces the distance sperm must travel to reach the fallopian tubes, where fertilisation usually occurs.
+                        Intrauterine insemination (IUI) is an assisted fertility treatment that places processed semen
+                        directly inside the uterus around ovulation period. This reduces the distance sperm must travel to
+                        reach the fallopian tubes, where fertilisation usually occurs.
                     </p>
                     <p class="text-muted lh-lg mb-4" style="font-size: 1.05rem;">
-                        Before recommending IUI, a fertility specialist evaluates both partners to determine whether the procedure is appropriate. Depending on the diagnosis, IUI may be performed during a natural ovulation cycle or alongside prescribed fertility medication and monitoring.
+                        Before recommending IUI, a fertility specialist evaluates both partners to determine whether the
+                        procedure is appropriate. Depending on the diagnosis, IUI may be performed during a natural
+                        ovulation cycle or alongside prescribed fertility medication and monitoring.
                     </p>
                     <div class="p-3 bg-pink-subtle rounded border-start border-4 border-pink">
                         <p class="text-dark mb-0 fw-medium" style="font-size: 0.95rem;">
-                            <i class="bi bi-info-circle-fill text-pink me-2"></i>IUI is less invasive than IVF, but it is not suitable for every fertility condition. A specialist can help determine which option suits the best.
+                            <i class="bi bi-info-circle-fill text-pink me-2"></i>IUI is less invasive than IVF, but it is
+                            not suitable for every fertility condition. A specialist can help determine which option suits
+                            the best.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center">
                     <img src="{{ asset('assets/images/infertility.jpg') }}" class="img-fluid rounded-3 shadow-sm w-100"
-                        style="object-fit: cover; max-height: 380px;" alt="What Is IUI Treatment" title="What Is IUI Treatment">
+                        style="object-fit: cover; max-height: 380px;" alt="What Is IUI Treatment"
+                        title="What Is IUI Treatment">
                 </div>
             </div>
         </div>
@@ -55,11 +63,13 @@
     <section class="py-5 bg-pink-subtle border-top">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Care &amp; Guidance</h6>
+                <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Care
+                    &amp; Guidance</h6>
                 <h2 class="fw-bold text-dark mb-3">Why Consider IUI Treatment in Mumbai?</h2>
                 <div class="title-underline mx-auto mb-4"></div>
                 <p class="text-muted mx-auto" style="max-width: 850px; font-size: 1.05rem;">
-                    When comparing various fertility centres, patients should look beyond the treatment comfort and it’s cost. Important considerations include:
+                    When comparing various fertility centres, patients should look beyond the treatment comfort and it’s
+                    cost. Important considerations include:
                 </p>
             </div>
 
@@ -68,7 +78,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white feature-card">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; min-width: 50px;">
+                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; min-width: 50px;">
                                 <i class="bi bi-person-check-fill fs-4"></i>
                             </div>
                             <h5 class="fw-bold text-dark mb-0">Individual fertility assessment</h5>
@@ -83,7 +94,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white feature-card">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; min-width: 50px;">
+                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; min-width: 50px;">
                                 <i class="bi bi-calendar2-heart-fill fs-4"></i>
                             </div>
                             <h5 class="fw-bold text-dark mb-0">Ovulation monitoring</h5>
@@ -98,7 +110,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white feature-card">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; min-width: 50px;">
+                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; min-width: 50px;">
                                 <i class="bi bi-shield-check fs-4"></i>
                             </div>
                             <h5 class="fw-bold text-dark mb-0">Sperm preparation</h5>
@@ -113,13 +126,15 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white feature-card">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; min-width: 50px;">
+                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; min-width: 50px;">
                                 <i class="bi bi-receipt fs-4"></i>
                             </div>
                             <h5 class="fw-bold text-dark mb-0">Transparent pricing</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            Ask for a breakdown of consultation, investigations, medication, monitoring, and insemination charges.
+                            Ask for a breakdown of consultation, investigations, medication, monitoring, and insemination
+                            charges.
                         </p>
                     </div>
                 </div>
@@ -128,13 +143,15 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 border-0 shadow-sm rounded-3 p-4 bg-white feature-card">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; min-width: 50px;">
+                            <div class="feature-icon-box rounded-circle bg-pink-subtle text-pink d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; min-width: 50px;">
                                 <i class="bi bi-chat-heart-fill fs-4"></i>
                             </div>
                             <h5 class="fw-bold text-dark mb-0">Clear treatment counselling</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            Patients should understand the potential benefits, limitations, risks, and alternatives before starting treatment.
+                            Patients should understand the potential benefits, limitations, risks, and alternatives before
+                            starting treatment.
                         </p>
                     </div>
                 </div>
@@ -147,7 +164,8 @@
                         <div class="d-flex align-items-center">
                             <i class="bi bi-patch-check-fill text-pink fs-3 me-3 flex-shrink-0"></i>
                             <p class="text-dark mb-0 fw-medium" style="font-size: 1rem;">
-                                The best treatment option is the one that is medically appropriate for your circumstances, rather than any unscientific, unsupported guarantees about pregnancy.
+                                The best treatment option is the one that is medically appropriate for your circumstances,
+                                rather than any unscientific, unsupported guarantees about pregnancy.
                             </p>
                         </div>
                     </div>
@@ -160,76 +178,94 @@
     <section class="py-5 bg-white border-top">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Step-By-Step Guide</h6>
+                <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">
+                    Step-By-Step Guide</h6>
                 <h2 class="fw-bold text-dark mb-3">How Does the IUI Procedure Work?</h2>
                 <div class="title-underline mx-auto mb-4"></div>
                 <p class="text-muted mx-auto" style="max-width: 800px; font-size: 1.05rem;">
-                    A comprehensive walk-through of the intrauterine insemination procedure from initial diagnosis to confirmation:
+                    A comprehensive walk-through of the intrauterine insemination procedure from initial diagnosis to
+                    confirmation:
                 </p>
             </div>
 
             <div class="row g-4 justify-content-center">
                 <!-- Step 1 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card" style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card"
+                        style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
                         <div class="d-flex align-items-center mb-3">
-                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2" style="font-size: 0.85rem;">1</span>
+                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2"
+                                style="font-size: 0.85rem;">1</span>
                             <h5 class="fw-bold text-dark mb-0">Initial fertility consultation</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            The fertility specialist reviews the couple's medical history, previous investigations, menstrual cycle, and any earlier fertility treatments.
+                            The fertility specialist reviews the couple's medical history, previous investigations,
+                            menstrual cycle, and any earlier fertility treatments.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card" style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card"
+                        style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
                         <div class="d-flex align-items-center mb-3">
-                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2" style="font-size: 0.85rem;">2</span>
+                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2"
+                                style="font-size: 0.85rem;">2</span>
                             <h5 class="fw-bold text-dark mb-0">Fertility tests and ovulation monitoring</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            Tests are selected according to the patient's needs. Ultrasound scans and, where appropriate, blood tests or ovulation-inducing medication may help determine the timing of insemination.
+                            Tests are selected according to the patient's needs. Ultrasound scans and, where appropriate,
+                            blood tests or ovulation-inducing medication may help determine the timing of insemination.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card" style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card"
+                        style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
                         <div class="d-flex align-items-center mb-3">
-                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2" style="font-size: 0.85rem;">3</span>
+                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2"
+                                style="font-size: 0.85rem;">3</span>
                             <h5 class="fw-bold text-dark mb-0">Sperm collection and preparation</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            A semen sample is collected and processed in the laboratory to prepare sperm for insemination. The clinic provides instructions about sample collection and any recommended abstinence period.
+                            A semen sample is collected and processed in the laboratory to prepare sperm for insemination.
+                            The clinic provides instructions about sample collection and any recommended abstinence period.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 4 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card" style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card"
+                        style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
                         <div class="d-flex align-items-center mb-3">
-                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2" style="font-size: 0.85rem;">4</span>
+                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2"
+                                style="font-size: 0.85rem;">4</span>
                             <h5 class="fw-bold text-dark mb-0">Insemination</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            A clinician uses a thin catheter to place the prepared sperm into the uterus. The procedure is generally brief, although some patients may experience temporary discomfort or mild cramping.
+                            A clinician uses a thin catheter to place the prepared sperm into the uterus. The procedure is
+                            generally brief, although some patients may experience temporary discomfort or mild cramping.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 5 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card" style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 p-4 step-card"
+                        style="background-color: #fafbfc; border-top: 3px solid #e83e8c !important;">
                         <div class="d-flex align-items-center mb-3">
-                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2" style="font-size: 0.85rem;">5</span>
+                            <span class="badge rounded-pill bg-pink text-white fw-bold px-3 py-2 me-2"
+                                style="font-size: 0.85rem;">5</span>
                             <h5 class="fw-bold text-dark mb-0">Follow-up and pregnancy testing</h5>
                         </div>
                         <p class="text-muted lh-lg mb-0" style="font-size: 0.95rem;">
-                            The fertility team advises the patient about follow-up and the appropriate time for a pregnancy test, commonly around two weeks after insemination. Individual instructions may vary depending on the treatment protocol.
+                            The fertility team advises the patient about follow-up and the appropriate time for a pregnancy
+                            test, commonly around two weeks after insemination. Individual instructions may vary depending
+                            on the treatment protocol.
                         </p>
                     </div>
                 </div>
@@ -242,7 +278,7 @@
         <div class="container py-4">
             <div class="row align-items-center">
                 <div class="col-lg-7 pe-lg-5 mb-4 mb-lg-0">
-                    <h3 class="fw-bold text-dark mb-4">What Is Success Rate Of IUI?</h3>
+                    <h2 class="fw-bold text-dark mb-4">What Is Success Rate Of IUI?</h2>
                     <p class="text-muted lh-lg mb-4">How is the IUI processed?</p>
                     <p class="text-muted lh-lg mb-0">Men should have 3-4 days of the abstinence from sexual intercourse.
                         Usually men’s are put on vitamin supplementations few days before IUI. Semen sample has to be given
@@ -267,11 +303,12 @@
             <div class="row align-items-stretch">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <img src="{{ asset('assets/images/iui-2.jpg') }}" class="img-fluid rounded shadow-sm w-100 h-100"
-                        style="object-fit: cover; min-height: 350px;" alt="Things To Consider Before Performing IUI" title="Things To Consider Before Performing IUI">
+                        style="object-fit: cover; min-height: 350px;" alt="Things To Consider Before Performing IUI"
+                        title="Things To Consider Before Performing IUI">
                 </div>
                 <div class="col-lg-7 d-flex">
                     <div class="p-5 bg-pink-subtle rounded w-100 d-flex flex-column justify-content-center shadow-sm">
-                        <h3 class="fw-bold text-dark mb-4">Things To Consider Before Performing IUI</h3>
+                        <h2 class="fw-bold text-dark mb-4">Things To Consider Before Performing IUI</h2>
                         <p class="text-muted lh-lg mb-3">Detailed History and Physical Examination.</p>
                         <p class="text-muted lh-lg mb-3">TVS (Trans-Vaginal Sonography)- With TVS, your doctor will see the
                             number, quality, and growth of follicles(eggs) from your ovaries. Even growth and quality of the
@@ -294,7 +331,7 @@
     <!-- Tabs Section -->
     <section class="py-5 bg-white border-top">
         <div class="container py-4">
-            <h4 class="fw-bold mb-4 fst-italic text-dark">IUI Center</h4>
+            <h3 class="fw-bold mb-4 fst-italic text-dark">IUI Center</h3>
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs mb-4 border-bottom-0" id="iuiTabs" role="tablist">
@@ -365,11 +402,13 @@
     <section class="py-5 bg-pink-subtle border-top">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Got Questions?</h6>
+                <h6 class="text-pink fw-bold text-uppercase mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Got
+                    Questions?</h6>
                 <h2 class="fw-bold text-dark mb-3">Frequently Asked Questions About IUI Treatment in Mumbai</h2>
                 <div class="title-underline mx-auto mb-4"></div>
                 <p class="text-muted mx-auto mb-0" style="max-width: 800px; font-size: 1.05rem;">
-                    Find clear, expert answers to the most common questions about Intrauterine Insemination (IUI) treatment at Pearl Fertility &amp; IVF in Mumbai.
+                    Find clear, expert answers to the most common questions about Intrauterine Insemination (IUI) treatment
+                    at Pearl Fertility &amp; IVF in Mumbai.
                 </p>
             </div>
 
@@ -380,13 +419,18 @@
                         <!-- FAQ 1 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading1">
-                                <button class="accordion-button fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                <button class="accordion-button fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1"
+                                    aria-expanded="true" aria-controls="faqCollapse1">
                                     What is the success rate of IUI treatment?
                                 </button>
                             </h3>
-                            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    Success rates depend on age, fertility diagnosis, sperm parameters, ovulation, and other clinical factors. Ask your specialist for figures relevant to your circumstances and clarify whether they refer to pregnancy or live birth.
+                                    Success rates depend on age, fertility diagnosis, sperm parameters, ovulation, and other
+                                    clinical factors. Ask your specialist for figures relevant to your circumstances and
+                                    clarify whether they refer to pregnancy or live birth.
                                 </div>
                             </div>
                         </div>
@@ -394,13 +438,17 @@
                         <!-- FAQ 2 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading2">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2"
+                                    aria-expanded="false" aria-controls="faqCollapse2">
                                     Is IUI treatment painful?
                                 </button>
                             </h3>
-                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    IUI is generally a brief procedure. Some patients experience mild discomfort or cramping during or after insemination, but experiences vary.
+                                    IUI is generally a brief procedure. Some patients experience mild discomfort or cramping
+                                    during or after insemination, but experiences vary.
                                 </div>
                             </div>
                         </div>
@@ -408,13 +456,18 @@
                         <!-- FAQ 3 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading3">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3"
+                                    aria-expanded="false" aria-controls="faqCollapse3">
                                     Who performs IUI treatment at Pearl Fertility &amp; IVF in Mumbai?
                                 </button>
                             </h3>
-                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    At Pearl Fertility &amp; IVF, IUI (Intrauterine Insemination) treatment is performed by Dr. Pritimala Kadam, a <a href="{{ url('/best-lady-gynecologist-in-mumbai') }}" class="text-pink fw-semibold text-decoration-none">lady gynecologist</a>.
+                                    At Pearl Fertility &amp; IVF, IUI (Intrauterine Insemination) treatment is performed by
+                                    Dr. Pritimala Kadam, a <a href="{{ url('/best-lady-gynecologist-in-mumbai') }}"
+                                        class="text-pink fw-semibold text-decoration-none">lady gynecologist</a>.
                                 </div>
                             </div>
                         </div>
@@ -422,13 +475,17 @@
                         <!-- FAQ 4 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading4">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4"
+                                    aria-expanded="false" aria-controls="faqCollapse4">
                                     How long does the IUI procedure take?
                                 </button>
                             </h3>
-                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    The insemination itself usually takes only a few minutes. Consultation, sperm preparation, and monitoring may take additional time.
+                                    The insemination itself usually takes only a few minutes. Consultation, sperm
+                                    preparation, and monitoring may take additional time.
                                 </div>
                             </div>
                         </div>
@@ -436,13 +493,17 @@
                         <!-- FAQ 5 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading5">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5"
+                                    aria-expanded="false" aria-controls="faqCollapse5">
                                     When should I take a pregnancy test after IUI?
                                 </button>
                             </h3>
-                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    A pregnancy test is commonly advised around 14 days after insemination, following your clinic's instructions.
+                                    A pregnancy test is commonly advised around 14 days after insemination, following your
+                                    clinic's instructions.
                                 </div>
                             </div>
                         </div>
@@ -450,13 +511,18 @@
                         <!-- FAQ 6 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading6">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
+                                    aria-expanded="false" aria-controls="faqCollapse6">
                                     How many IUI cycles should I try?
                                 </button>
                             </h3>
-                            <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    The recommended number depends on age, diagnosis, previous outcomes, and other individual factors. Your specialist can advise when to repeat IUI or discuss alternatives such as IVF.
+                                    The recommended number depends on age, diagnosis, previous outcomes, and other
+                                    individual factors. Your specialist can advise when to repeat IUI or discuss
+                                    alternatives such as IVF.
                                 </div>
                             </div>
                         </div>
@@ -464,13 +530,17 @@
                         <!-- FAQ 7 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading7">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7"
+                                    aria-expanded="false" aria-controls="faqCollapse7">
                                     Is IUI better than IVF?
                                 </button>
                             </h3>
-                            <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    Neither treatment is best for everyone. The appropriate option depends on the cause of infertility, medical findings, expected outcomes, and personal circumstances.
+                                    Neither treatment is best for everyone. The appropriate option depends on the cause of
+                                    infertility, medical findings, expected outcomes, and personal circumstances.
                                 </div>
                             </div>
                         </div>
@@ -478,13 +548,18 @@
                         <!-- FAQ 8 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading8">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8"
+                                    aria-expanded="false" aria-controls="faqCollapse8">
                                     What tests are needed before IUI?
                                 </button>
                             </h3>
-                            <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    Investigations may include semen analysis, ovulation assessment, ultrasound, and tests to check fallopian tube patency. The exact tests depend on the patient's medical history.
+                                    Investigations may include semen analysis, ovulation assessment, ultrasound, and tests
+                                    to check fallopian tube patency. The exact tests depend on the patient's medical
+                                    history.
                                 </div>
                             </div>
                         </div>
@@ -492,13 +567,18 @@
                         <!-- FAQ 9 -->
                         <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                             <h3 class="accordion-header" id="faqHeading9">
-                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+                                <button class="accordion-button collapsed fw-bold text-dark bg-light py-3 px-4 shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9"
+                                    aria-expanded="false" aria-controls="faqCollapse9">
                                     Can I return to normal activities after IUI?
                                 </button>
                             </h3>
-                            <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#iuiFaqAccordion">
+                            <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9"
+                                data-bs-parent="#iuiFaqAccordion">
                                 <div class="accordion-body px-4 py-3 text-muted lh-lg bg-white border-top">
-                                    Yes, many patients can resume their usual daily activities soon after the procedure. Follow your treating team's advice, especially if fertility medication or additional monitoring is involved.
+                                    Yes, many patients can resume their usual daily activities soon after the procedure.
+                                    Follow your treating team's advice, especially if fertility medication or additional
+                                    monitoring is involved.
                                 </div>
                             </div>
                         </div>
@@ -512,7 +592,7 @@
     <!-- Most Searched Keywords Section -->
     <section class="py-5 text-white" style="background-color: #ff007f;">
         <div class="container py-4">
-            <h5 class="fw-bold text-center mb-5">Most Searched Keyword For IUI Treatment</h5>
+            <h4 class="fw-bold text-center mb-5">Most Searched Keyword For IUI Treatment</h4>
             <div class="row justify-content-center px-lg-5">
                 <div class="col-lg-3 col-md-6 mb-3 d-flex align-items-center">
                     <i class="bi bi-check fw-bold fs-5 me-2"></i>

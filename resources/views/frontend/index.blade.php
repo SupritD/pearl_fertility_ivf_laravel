@@ -8,7 +8,9 @@
         <div class="swiper-wrapper">
             @forelse ($sliders as $slider)
                 <div class="swiper-slide">
-                    <img src="{{ asset('storage/' . $slider->image_desktop) }}" alt="{{ $slider->image_alt ?? 'Pearl Fertility and IVF' }}" title="{{ $slider->image_alt ?? 'Pearl Fertility and IVF' }}">
+                    <img src="{{ asset('storage/' . $slider->image_desktop) }}"
+                        alt="{{ $slider->image_alt ?? 'Pearl Fertility and IVF' }}"
+                        title="{{ $slider->image_alt ?? 'Pearl Fertility and IVF' }}">
                     <div class="banner-caption">
                         <h1 class="display-4 fw-bold mb-3">{{ $slider->heading }}</h1>
                         <p class="lead mb-4">{{ $slider->subheading }}</p>
@@ -19,14 +21,16 @@
                 </div>
             @empty
                 <div class="swiper-slide">
-                    <img src="{{ asset('assets/images/banners/banner1.jpg') }}" alt="Welcome to Pearl Fertility and IVF" title="Welcome to Pearl Fertility and IVF">
+                    <img src="{{ asset('assets/images/banners/banner1.jpg') }}" alt="Welcome to Pearl Fertility and IVF"
+                        title="Welcome to Pearl Fertility and IVF">
                     <div class="banner-caption">
                         <h1 class="display-4 fw-bold mb-3">Where Miracles are Conceived with Care</h1>
                         <p class="lead mb-4">-Trust the best for your Life's Biggest Dream.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{ asset('assets/images/banners/banner2.jpg') }}" alt="Advanced IVF Laboratory" title="Advanced IVF Laboratory">
+                    <img src="{{ asset('assets/images/banners/banner2.jpg') }}" alt="Advanced IVF Laboratory"
+                        title="Advanced IVF Laboratory">
                     <div class="banner-caption">
                         <h1 class="display-4 fw-bold mb-3">Building Families, Creating Futures</h1>
                         <p class="lead mb-4">-Guiding You on Your Path to Parenthood.</p>
@@ -218,8 +222,47 @@
         </div>
     </div>
 
+    <!-- Doctor Spotlight Section -->
+    <section class="py-5 bg-pink-subtle">
+        <div class="container py-3 py-lg-4">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-5 text-center mb-4 mb-md-0">
+                    <img src="{{ asset('assets/images/Dr-Pritimala-Gangurde-Kadam.jpg') }}"
+                        class="img-fluid rounded-circle border border-5 border-white shadow-sm"
+                        style="width: 270px; height: 270px; object-fit: cover; object-position: center top;"
+                        alt="best lady gynecologist in mumbai">
+                </div>
+                <div class="col-lg-8 col-md-7 ps-lg-4">
+                    <h2 class="fw-bold text-dark mb-1" style="font-size: 2.1rem; line-height: 1.2;">Dr.Pritimala Gangurde
+                        Kadam</h2>
+                    <p class="text-dark mb-3 fs-5">Lady Gynecologist</p>
+                    <div class="mb-3 d-flex flex-wrap gap-2">
+                        <span class="badge border border-secondary text-secondary rounded-0 fw-normal px-2 py-1"
+                            style="font-size: 0.8rem; letter-spacing: 0.5px;">M.B.B.S.</span>
+                        <span class="badge border border-secondary text-secondary rounded-0 fw-normal px-2 py-1"
+                            style="font-size: 0.8rem; letter-spacing: 0.5px;">D.N.B</span>
+                        <span class="badge border border-secondary text-secondary rounded-0 fw-normal px-2 py-1"
+                            style="font-size: 0.8rem; letter-spacing: 0.5px;">-INFERTILITY SPECIALIST</span>
+                    </div>
+                    <p class="text-muted lh-lg mb-3" style="font-size: 0.95rem;">
+                        MBBS DNB ( Obst & Gyn ) masters in reproductive medicine & IVF (London), PG reproductive
+                        medicine(ACOG), Diploma in Ivf & Rep medicine( Germany ). Work experience of 6 yrs at well reputed
+                        Dept of IVF, Lilavati hospital & research centre, Bandra West. Mumbai
+                    </p>
+                    <p class="text-muted lh-lg mb-4" style="font-size: 0.95rem;">
+                        Dr. Pritimala Gangurde Kadam is a gynecologist and infertility specialist at Pearl Fertility & IVF
+                        in Mumbai, with 15 years of professional experience.
+                    </p>
+                    <a href="{{ route('frontend.best-lady-gynecologist-in-mumbai') }}" class="btn btn-read-more">
+                        READ MORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="cta-section mt-5 pt-5 pb-5 pt-lg-0 pb-lg-0">
+    <section class="cta-section pt-5 pb-5 pt-lg-0 pb-lg-0">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 cta-image-col">
@@ -284,44 +327,46 @@
             <div class="swiper testimonialSwiper pb-5">
                 <div class="swiper-wrapper">
                     @foreach($reviews as $review)
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="d-flex align-items-center mb-3">
-                                @if($review->image)
-                                    <img src="{{ asset('storage/' . $review->image) }}" class="testimonial-avatar rounded-circle" style="object-fit: cover;" alt="{{ $review->patient_name }}" title="{{ $review->patient_name }}">
-                                @else
-                                    @php
-                                        $colors = ['#c95fd9', '#f6d149', '#f2623d', '#6a8c9e'];
-                                        $color = $colors[crc32($review->patient_name) % count($colors)];
-                                    @endphp
-                                    <div class="testimonial-avatar" style="background-color: {{ $color }};">
-                                        {{ strtoupper(substr($review->patient_name, 0, 1)) }}
-                                    </div>
-                                @endif
-                                <div>
-                                    <div class="fw-bold fs-6">{{ strtoupper($review->patient_name) }}</div>
-                                    <div class="text-muted small">
-                                        @if($review->review_date)
-                                            {{ \Carbon\Carbon::parse($review->review_date)->diffForHumans() }}
-                                        @else
-                                            {{ $review->created_at->diffForHumans() }}
-                                        @endif
-                                    </div>
-                                </div>
-                                <i class="bi bi-google ms-auto text-primary"></i>
-                            </div>
-                            <div class="stars">
-                                @for($i = 1; $i <= 5; $i++)
-                                    @if($i <= $review->rating)
-                                        <i class="bi bi-star-fill text-warning"></i>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    @if($review->image)
+                                        <img src="{{ asset('storage/' . $review->image) }}"
+                                            class="testimonial-avatar rounded-circle" style="object-fit: cover;"
+                                            alt="{{ $review->patient_name }}" title="{{ $review->patient_name }}">
                                     @else
-                                        <i class="bi bi-star text-muted"></i>
+                                        @php
+                                            $colors = ['#c95fd9', '#f6d149', '#f2623d', '#6a8c9e'];
+                                            $color = $colors[crc32($review->patient_name) % count($colors)];
+                                        @endphp
+                                        <div class="testimonial-avatar" style="background-color: {{ $color }};">
+                                            {{ strtoupper(substr($review->patient_name, 0, 1)) }}
+                                        </div>
                                     @endif
-                                @endfor
+                                    <div>
+                                        <div class="fw-bold fs-6">{{ strtoupper($review->patient_name) }}</div>
+                                        <div class="text-muted small">
+                                            @if($review->review_date)
+                                                {{ \Carbon\Carbon::parse($review->review_date)->diffForHumans() }}
+                                            @else
+                                                {{ $review->created_at->diffForHumans() }}
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <i class="bi bi-google ms-auto text-primary"></i>
+                                </div>
+                                <div class="stars">
+                                    @for($i = 1; $i <= 5; $i++)
+                                        @if($i <= $review->rating)
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        @else
+                                            <i class="bi bi-star text-muted"></i>
+                                        @endif
+                                    @endfor
+                                </div>
+                                <p class="testimonial-text">"{{ $review->review_text }}"</p>
                             </div>
-                            <p class="testimonial-text">"{{ $review->review_text }}"</p>
                         </div>
-                    </div>
                     @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
@@ -394,8 +439,8 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <!-- Using placeholder for pregnant woman / doctor -->
-                    <img src="{{ asset('assets/images/Caring-Prenatal-Checkup-Duo.jpg') }}"
-                        alt="Doctor and Patient" title="Doctor and Patient" class="img-fluid rounded shadow-sm">
+                    <img src="{{ asset('assets/images/Caring-Prenatal-Checkup-Duo.jpg') }}" alt="Doctor and Patient"
+                        title="Doctor and Patient" class="img-fluid rounded shadow-sm">
                 </div>
             </div>
         </div>
@@ -443,8 +488,8 @@
                 <div class="swiper-wrapper">
                     @for ($i = 2; $i <= 29; $i++)
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/images/img-gallery/' . $i . '.png') }}" alt="Gallery Image" title="Gallery Image"
-                                class="gallery-img">
+                            <img src="{{ asset('assets/images/img-gallery/' . $i . '.png') }}" alt="Gallery Image"
+                                title="Gallery Image" class="gallery-img">
                         </div>
                     @endfor
                 </div>
@@ -461,7 +506,8 @@
             <div class="row g-0 rounded overflow-hidden shadow-sm">
                 <div class="col-lg-6">
                     <!-- Using placeholder for yoga / nutrition -->
-                    <img src="{{ asset('assets/images/yoga.jpg')}}" alt="Nutrition and Yoga" title="Nutrition and Yoga" class="nutrition-img">
+                    <img src="{{ asset('assets/images/yoga.jpg')}}" alt="Nutrition and Yoga" title="Nutrition and Yoga"
+                        class="nutrition-img">
                 </div>
                 <div class="col-lg-6">
                     <div class="nutrition-text-box">
@@ -491,7 +537,8 @@
                             <div class="card h-100 shadow-sm border-0 bg-white">
                                 @if($recent->image)
                                     <img src="{{ asset('storage/' . $recent->image) }}" class="card-img-top"
-                                        alt="{{ $recent->image_alt ?? $recent->title }}" title="{{ $recent->image_alt ?? $recent->title }}" style="height: 220px; object-fit: cover;">
+                                        alt="{{ $recent->image_alt ?? $recent->title }}"
+                                        title="{{ $recent->image_alt ?? $recent->title }}" style="height: 220px; object-fit: cover;">
                                 @else
                                     <div class="card-img-top bg-light d-flex align-items-center justify-content-center"
                                         style="height: 220px;">

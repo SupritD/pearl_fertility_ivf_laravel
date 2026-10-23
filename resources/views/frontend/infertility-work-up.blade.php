@@ -45,8 +45,8 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="{{ asset('assets/images/infertility.jpg') }}"
-                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Infertility Work Up" title="Infertility Work Up">
+                    <img src="{{ asset('assets/images/infertility.jpg') }}" class="img-fluid rounded shadow-sm w-100"
+                        style="object-fit: cover;" alt="Infertility Work Up" title="Infertility Work Up">
                 </div>
             </div>
 
@@ -73,11 +73,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <img src="{{ asset('assets/images/automated-semen-analyser-img.jpg') }}"
-                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Semen Analysis" title="Semen Analysis">
+                        class="img-fluid rounded shadow-sm w-100" style="object-fit: cover;" alt="Semen Analysis"
+                        title="Semen Analysis">
                 </div>
                 <div class="col-lg-7">
                     <div class="ps-lg-5">
-                        <h3 class="fw-bold text-dark mb-4">What is Semen analysis and how it is done?</h3>
+                        <h2 class="fw-bold text-dark mb-4">What is Semen analysis and how it is done?</h2>
                         <p class="text-muted lh-lg mb-4">
                             Semen analysis is analysis of semen done in laboratory to see the sperm count, sperm motility
                             and its function. It’s also called as male fertility test or sperm count test. It is done on
@@ -109,7 +110,7 @@
     <!-- Hysteroscopy Section -->
     <section class="py-5 bg-white pt-5 mt-3">
         <div class="container">
-            <h4 class="fw-bold text-dark mb-3">What is role of Hysteroscopy in IVF?</h4>
+            <h3 class="fw-bold text-dark mb-3">What is role of Hysteroscopy in IVF?</h3>
             <hr class="text-muted mb-4">
             <p class="text-muted lh-lg mb-4" style="font-size: 1.05rem;">
                 Hysteroscopy is procedure to see inside your uterus with the help of special endoscopy instruments ton which
@@ -144,7 +145,7 @@
     <!-- Laparoscopy Section -->
     <section class="py-5 bg-white">
         <div class="container">
-            <h4 class="fw-bold text-dark mb-3">What is role of Laparoscopy in IVF?</h4>
+            <h3 class="fw-bold text-dark mb-3">What is role of Laparoscopy in IVF?</h3>
             <hr class="text-muted mb-4">
             <p class="text-muted lh-lg mb-4" style="font-size: 1.05rem;">
                 Laparoscopy is a surgical procedure in which doctors insert a laparoscope a special surgical instruments
@@ -167,7 +168,7 @@
     <!-- Consult Physician Section -->
     <section class="py-5 bg-white">
         <div class="container mb-4">
-            <h4 class="fw-bold text-dark mb-3">When do we have to consult Physician during Infertility treatment?</h4>
+            <h3 class="fw-bold text-dark mb-3">When do we have to consult Physician during Infertility treatment?</h3>
             <hr class="text-muted mb-4">
             <p class="text-muted lh-lg mb-4" style="font-size: 1.05rem;">
                 We need to consult physician if you have any significant systemic illness like diabetes mellitus, thyroid

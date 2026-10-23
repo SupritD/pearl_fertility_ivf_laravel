@@ -26,7 +26,7 @@
     <!-- Best IVF Center In Mumbai Intro -->
     <section class="py-5 bg-white">
         <div class="container py-4 text-center">
-            <h3 class="fw-bold text-pink mb-3">Best IVF Center In Mumbai</h3>
+            <h2 class="fw-bold text-pink mb-3">Best IVF Center In Mumbai</h2>
             <div class="title-underline mx-auto mb-4"></div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-lg-7 d-flex">
                     <div class="p-5 bg-pink-subtle rounded w-100 d-flex flex-column justify-content-center shadow-sm">
-                        <h3 class="fw-bold text-dark mb-4">What Is IVF?</h3>
+                        <h2 class="fw-bold text-dark mb-4">What Is IVF?</h2>
                         <p class="text-muted lh-lg mb-0">Ivf is IN VITRO FERTILISATION. In vitro fertilization is a method
                             of fertilization in which an egg and sperm are joined in a laboratory setting. The procedure
                             entails tracking and promoting a woman’s ovulatory cycle, taking an ovum or ova from her
@@ -70,7 +70,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0 pe-lg-5">
-                    <h3 class="fw-bold text-dark mb-4">What Happens In The IVF Process?</h3>
+                    <h2 class="fw-bold text-dark mb-4">What Happens In The IVF Process?</h2>
                     <p class="text-muted lh-lg mb-4">The first stage in IVF is to put hormones into your body so that you
                         can generate many eggs each month rather than just one. After that, you’ll be evaluated to see if
                         you’re ready for egg retrieval.</p>
@@ -110,7 +110,7 @@
     <!-- Tabs Section -->
     <section class="py-5 bg-white border-top">
         <div class="container py-4">
-            <h4 class="fw-bold mb-4 fst-italic text-dark">About-Pearl IVF center</h4>
+            <h3 class="fw-bold mb-4 fst-italic text-dark">About-Pearl IVF center</h3>
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs mb-4 border-bottom-0" id="ivfTabs" role="tablist">
@@ -184,7 +184,7 @@
     <!-- Most Searched Keywords Section -->
     <section class="py-5 text-white" style="background-color: #ff007f;">
         <div class="container py-4">
-            <h5 class="fw-bold text-center mb-5">Most Searched Keyword For Best IVF Center</h5>
+            <h4 class="fw-bold text-center mb-5">Most Searched Keyword For Best IVF Center</h4>
             <div class="row justify-content-center px-lg-5">
                 <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-center">
                     <i class="bi bi-check fw-bold fs-5 me-2"></i>

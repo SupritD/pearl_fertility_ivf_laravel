@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect any URL explicitly containing /public to clean canonical URL
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\s/+(?:public/)*public(?:/([^\s?]*))?(\s|\?) [NC]
+    RewriteRule ^ /%1 [L,R=301,NE]
+
+    # Rewrite all other requests to the public/ directory
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

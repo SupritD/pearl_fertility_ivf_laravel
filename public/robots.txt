@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: 
 Disallow: /cgi-bin/
+Disallow: /public/
+Disallow: /admin/
 Sitemap: https://pearlfertilityandivf.com/sitemap.xml

@@ -291,7 +291,7 @@
                 </div>
                 <div class="col-lg-5 text-center">
                     <img src="{{ asset('assets/images/iui-1.png') }}" class="img-fluid rounded shadow-sm"
-                        alt="IUI Success Rate" title="IUI Success Rate">
+                        alt="best iui treatment in mumbai" title="best iui treatment in mumbai">
                 </div>
             </div>
         </div>

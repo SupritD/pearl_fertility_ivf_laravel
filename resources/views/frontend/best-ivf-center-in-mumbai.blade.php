@@ -48,7 +48,7 @@
             <div class="row align-items-stretch">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <img src="{{ asset('assets/images/1-ivf.jpg') }}" class="img-fluid rounded shadow-sm w-100 h-100"
-                        style="object-fit: cover; min-height: 350px;" alt="What is IVF">
+                        style="object-fit: cover; min-height: 350px;" alt="Low cost IVF centre in Mumbai">
                 </div>
                 <div class="col-lg-7 d-flex">
                     <div class="p-5 bg-pink-subtle rounded w-100 d-flex flex-column justify-content-center shadow-sm">

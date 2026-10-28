@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <img src="{{ asset('assets/images/fertility-eveluation.jpg') }}" class="img-fluid w-100"
-                        style="object-fit: cover;" alt="IVF Cost Consultation" title="IVF Cost Consultation">
+                        style="object-fit: cover;" alt="ivf cost in mumbai" title="ivf cost in mumbai">
                 </div>
             </div>
         </div>

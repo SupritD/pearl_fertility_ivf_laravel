@@ -6,7 +6,7 @@
 
 @section('schema_markup')
     <script type="application/ld+json">
-            {!! json_encode([
+                    {!! json_encode([
         '@' . 'context' => 'https://schema.org',
         '@type' => 'FAQPage',
         'mainEntity' => [
@@ -116,7 +116,7 @@
             ]
         ]
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-            </script>
+                    </script>
 @endsection
 
 @section('content')
@@ -143,8 +143,20 @@
         <div class="container py-4">
             <!-- Row 1 -->
             <div class="row align-items-stretch mb-5 pb-4">
-                <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0 d-flex flex-column justify-content-center">
-                    <h2 class="fw-bold text-dark mb-4">What Is PCOD?</h2>
+                <!-- Mobile Heading -->
+                <div class="col-12 d-lg-none mb-3 order-0">
+                    <h2 class="fw-bold text-dark mb-0">What Is PCOD?</h2>
+                </div>
+
+                <!-- Image Column (Under heading on mobile, right column on desktop) -->
+                <div class="col-lg-6 order-1 order-lg-2 text-center d-flex mb-4 mb-lg-0">
+                    <img src="{{ asset('assets/images/PCOD-img.jpg') }}" class="img-fluid w-100 shadow-sm"
+                        style="object-fit: cover;" alt="What is PCOD" title="What is PCOD">
+                </div>
+
+                <!-- Content Column (Under image on mobile, left column on desktop) -->
+                <div class="col-lg-6 order-2 order-lg-1 pe-lg-5 d-flex flex-column justify-content-center">
+                    <h2 class="fw-bold text-dark mb-4 d-none d-lg-block">What Is PCOD?</h2>
                     <p class="text-muted lh-lg mb-4" style="font-size: 1.05rem;">
                         Polycystic Ovarian disease (PCOD) or polycystic ovarian syndrome (PCOS) is a
                         common hormonal imbalance affecting 5-10% of women between 15-45 years of age. PCOD usually
@@ -168,17 +180,13 @@
                         today.
                     </p>
                 </div>
-                <div class="col-lg-6 text-center d-flex">
-                    <img src="{{ asset('assets/images/PCOD-img.jpg') }}" class="img-fluid w-100 shadow-sm"
-                        style="object-fit: cover;" alt="What is PCOD" title="What is PCOD">
-                </div>
             </div>
 
             <!-- Row 2 -->
             <div class="row align-items-stretch pt-2">
                 <div class="col-lg-6 text-center d-flex mb-5 mb-lg-0">
                     <img src="{{ asset('assets/images/PCOD-img2.jpg') }}" class="img-fluid w-100 shadow-sm"
-                        style="object-fit: cover;" alt="Cause of PCOD" title="Cause of PCOD">
+                        style="object-fit: cover;" alt="pcos treatment in mumbai" title="pcos treatment in mumbai">
                 </div>
                 <div class="col-lg-6 ps-lg-5 d-flex flex-column justify-content-center">
                     <h2 class="fw-bold text-dark mb-4">What Is Cause Of PCOD / PCOS?</h2>

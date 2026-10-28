@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-lg-5 text-center">
                     <img src="{{ asset('assets/images/icsi.jpg') }}" class="img-fluid rounded shadow-sm"
-                        alt="ICSI Treatment Process" title="ICSI Treatment Process">
+                        alt="ICSI treatment in mumbai" title="ICSI treatment in mumbai">
                 </div>
             </div>
         </div>
